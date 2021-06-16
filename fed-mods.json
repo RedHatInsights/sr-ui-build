@@ -1,0 +1,16 @@
+{
+    "apicurio_registry": {
+        "entry": [
+            "/remoteEntry.js"
+        ],
+        "modules": [
+            "/243.css",
+            "/243.bundle.45e4ea8272ec3c6f0c34.js",
+            "/419.bundle.1c60d5c54eb163123f87.js",
+            "/695.css",
+            "/695.bundle.8ba7ec373690a187decd.js",
+            "/37.css",
+            "/37.bundle.0c41598755295a9eec3d.js"
+        ]
+    }
+}
