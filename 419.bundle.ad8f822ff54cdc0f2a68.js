@@ -321,6 +321,8 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: consume shared module (default) react@=17.0.1 (singleton) (fallback: ./node_modules/react/index.js) (eager)
 var index_js_eager_ = __webpack_require__(48121);
 var index_js_eager_default = /*#__PURE__*/__webpack_require__.n(index_js_eager_);
+// EXTERNAL MODULE: consume shared module (default) react-router-dom@=5.2.0 (singleton) (fallback: ./node_modules/react-router-dom/esm/react-router-dom.js)
+var react_router_dom_js_ = __webpack_require__(55399);
 // EXTERNAL MODULE: ./src/app/pages/basePage.tsx
 var basePage = __webpack_require__(26619);
 // EXTERNAL MODULE: consume shared module (default) react-router@=5.2.0 (strict) (fallback: ./node_modules/react-router/esm/react-router.js)
@@ -361,6 +363,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
 
 
 
+
 /**
  * The artifact details redirect page.
  */
@@ -374,7 +377,8 @@ var ArtifactRedirectPage = /** @class */ (function (_super) {
         var artifactId = this.artifactIdParam();
         var redirect = this.linkTo("/artifacts/" + encodeURIComponent(groupId) + "/" + encodeURIComponent(artifactId) + "/versions/latest");
         services.Services.getLoggerService().info("[ArtifactRedirectPage] Redirecting to: %s", redirect);
-        return (index_js_eager_default().createElement(react_router_js_.Redirect, { to: redirect }));
+        return (index_js_eager_default().createElement(react_router_dom_js_.BrowserRouter, null,
+            index_js_eager_default().createElement(react_router_js_.Redirect, { to: redirect })));
     };
     ArtifactRedirectPage.prototype.groupIdParam = function () {
         return this.getPathParam("groupId");
@@ -523,4 +527,4 @@ var ArtifactTypes = /** @class */ (function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=419.bundle.1c60d5c54eb163123f87.js.map
+//# sourceMappingURL=419.bundle.ad8f822ff54cdc0f2a68.js.map

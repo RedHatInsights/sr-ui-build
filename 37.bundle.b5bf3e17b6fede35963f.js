@@ -321,14 +321,14 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: consume shared module (default) react@=17.0.1 (singleton) (fallback: ./node_modules/react/index.js) (eager)
 var index_js_eager_ = __webpack_require__(48121);
 var index_js_eager_default = /*#__PURE__*/__webpack_require__.n(index_js_eager_);
+// EXTERNAL MODULE: consume shared module (default) react-router-dom@=5.2.0 (singleton) (fallback: ./node_modules/react-router-dom/esm/react-router-dom.js)
+var react_router_dom_js_ = __webpack_require__(55399);
 // EXTERNAL MODULE: consume shared module (default) @patternfly/react-core@=4.121.1 (strict) (fallback: ./node_modules/@patternfly/react-core/dist/esm/index.js)
 var index_js_ = __webpack_require__(90847);
 // EXTERNAL MODULE: ./src/app/pages/basePage.tsx
 var basePage = __webpack_require__(26619);
 // EXTERNAL MODULE: ./src/app/components/index.ts + 2 modules
 var components = __webpack_require__(21467);
-// EXTERNAL MODULE: consume shared module (default) react-router-dom@=5.2.0 (singleton) (fallback: ./node_modules/react-router-dom/esm/react-router-dom.js)
-var react_router_dom_js_ = __webpack_require__(55399);
 ;// CONCATENATED MODULE: ./src/app/pages/rules/components/pageheader/pageheader.tsx
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -453,6 +453,7 @@ var __spreadArrays = (undefined && undefined.__spreadArrays) || function () {
 
 
 
+
 /**
  * The global rules page.
  */
@@ -495,7 +496,7 @@ var RulesPage = /** @class */ (function (_super) {
         return _this;
     }
     RulesPage.prototype.renderPage = function () {
-        return (index_js_eager_default().createElement((index_js_eager_default()).Fragment, null,
+        return (index_js_eager_default().createElement(react_router_dom_js_.BrowserRouter, null,
             index_js_eager_default().createElement(index_js_.PageSection, { className: "ps_rules-header", variant: index_js_.PageSectionVariants.light },
                 index_js_eager_default().createElement(RulesPageHeader, null)),
             index_js_eager_default().createElement(index_js_.PageSection, { className: "ps_rules-description", variant: index_js_.PageSectionVariants.light },
@@ -670,4 +671,4 @@ var ArtifactTypes = /** @class */ (function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=37.bundle.0c41598755295a9eec3d.js.map
+//# sourceMappingURL=37.bundle.b5bf3e17b6fede35963f.js.map

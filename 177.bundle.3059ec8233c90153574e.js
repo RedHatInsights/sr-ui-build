@@ -1,4 +1,4 @@
-(self["webpackChunk_apicurio_registry_ui"] = self["webpackChunk_apicurio_registry_ui"] || []).push([[737],{
+(self["webpackChunk_apicurio_registry_ui"] = self["webpackChunk_apicurio_registry_ui"] || []).push([[177],{
 
 /***/ 52445:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -2822,7 +2822,7 @@ Services._intialize();
 /***/ 95762:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "images/apicurio_logo_darkbkg_350px.png";
+module.exports = __webpack_require__.p + "images/2cc104d5.png";
 
 /***/ }),
 
@@ -2834,4 +2834,4 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW
 /***/ })
 
 }]);
-//# sourceMappingURL=737.bundle.4e5d81fc688b01425608.js.map
+//# sourceMappingURL=177.bundle.3059ec8233c90153574e.js.map

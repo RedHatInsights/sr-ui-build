@@ -527,6 +527,7 @@ var __spreadArrays = (undefined && undefined.__spreadArrays) || function () {
 
 
 
+
 /**
  * The global rules page.
  */
@@ -569,7 +570,7 @@ var RulesPage = /** @class */ (function (_super) {
         return _this;
     }
     RulesPage.prototype.renderPage = function () {
-        return (index_js_eager_default().createElement((index_js_eager_default()).Fragment, null,
+        return (index_js_eager_default().createElement(react_router_dom_js_.BrowserRouter, null,
             index_js_eager_default().createElement(index_js_.PageSection, { className: "ps_rules-header", variant: index_js_.PageSectionVariants.light },
                 index_js_eager_default().createElement(RulesPageHeader, null)),
             index_js_eager_default().createElement(index_js_.PageSection, { className: "ps_rules-description", variant: index_js_.PageSectionVariants.light },
@@ -742,6 +743,7 @@ var artifact_extends = (undefined && undefined.__extends) || (function () {
 
 
 
+
 /**
  * The artifact details redirect page.
  */
@@ -755,7 +757,8 @@ var ArtifactRedirectPage = /** @class */ (function (_super) {
         var artifactId = this.artifactIdParam();
         var redirect = this.linkTo("/artifacts/" + encodeURIComponent(groupId) + "/" + encodeURIComponent(artifactId) + "/versions/latest");
         services.Services.getLoggerService().info("[ArtifactRedirectPage] Redirecting to: %s", redirect);
-        return (index_js_eager_default().createElement(react_router_js_.Redirect, { to: redirect }));
+        return (index_js_eager_default().createElement(react_router_dom_js_.BrowserRouter, null,
+            index_js_eager_default().createElement(react_router_js_.Redirect, { to: redirect })));
     };
     ArtifactRedirectPage.prototype.groupIdParam = function () {
         return this.getPathParam("groupId");
@@ -1166,4 +1169,4 @@ var ArtifactTypes = /** @class */ (function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=27.bundle.ff0b83420036fff77061.js.map
+//# sourceMappingURL=27.bundle.40c24c5d5a028d76518f.js.map
