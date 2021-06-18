@@ -395,8 +395,8 @@ var react_dom_index_js_eager_default = /*#__PURE__*/__webpack_require__.n(react_
 
 // EXTERNAL MODULE: consume shared module (default) @patternfly/react-core@=4.121.1 (strict) (fallback: ./node_modules/@patternfly/react-core/dist/esm/index.js)
 var index_js_ = __webpack_require__(90847);
-// EXTERNAL MODULE: consume shared module (default) react-router-dom@=5.2.0 (singleton) (fallback: ./node_modules/react-router-dom/esm/react-router-dom.js)
-var react_router_dom_js_ = __webpack_require__(55399);
+// EXTERNAL MODULE: consume shared module (default) react-router-dom@=5.2.0 (singleton) (fallback: ./node_modules/react-router-dom/esm/react-router-dom.js) (eager)
+var react_router_dom_js_eager_ = __webpack_require__(76007);
 // EXTERNAL MODULE: ./src/app/components/header/index.ts + 1 modules
 var header = __webpack_require__(35661);
 // EXTERNAL MODULE: ./src/app/pages/basePage.tsx
@@ -451,7 +451,7 @@ var RulesPageHeader = /** @class */ (function (_super) {
                 index_js_eager_default().createElement(index_js_.TextContent, null,
                     index_js_eager_default().createElement(index_js_.Text, { component: index_js_.TextVariants.h1 }, "Global Rules"))),
             index_js_eager_default().createElement(index_js_.FlexItem, { align: { default: "alignRight" } },
-                index_js_eager_default().createElement(react_router_dom_js_.Link, { to: this.linkTo("/artifacts") }, "Back to artifacts"))));
+                index_js_eager_default().createElement(react_router_dom_js_eager_.Link, { to: this.linkTo("/artifacts") }, "Back to artifacts"))));
     };
     RulesPageHeader.prototype.initializeState = function () {
         return {};
@@ -527,7 +527,6 @@ var __spreadArrays = (undefined && undefined.__spreadArrays) || function () {
 
 
 
-
 /**
  * The global rules page.
  */
@@ -570,7 +569,7 @@ var RulesPage = /** @class */ (function (_super) {
         return _this;
     }
     RulesPage.prototype.renderPage = function () {
-        return (index_js_eager_default().createElement(react_router_dom_js_.BrowserRouter, null,
+        return (index_js_eager_default().createElement((index_js_eager_default()).Fragment, null,
             index_js_eager_default().createElement(index_js_.PageSection, { className: "ps_rules-header", variant: index_js_.PageSectionVariants.light },
                 index_js_eager_default().createElement(RulesPageHeader, null)),
             index_js_eager_default().createElement(index_js_.PageSection, { className: "ps_rules-description", variant: index_js_.PageSectionVariants.light },
@@ -707,8 +706,6 @@ var uploadForm = __webpack_require__(70150);
 
 
 
-// EXTERNAL MODULE: consume shared module (default) react-router@=5.2.0 (strict) (fallback: ./node_modules/react-router/esm/react-router.js)
-var react_router_js_ = __webpack_require__(50337);
 ;// CONCATENATED MODULE: ./src/app/pages/artifact/artifact.tsx
 /**
  * @license
@@ -743,7 +740,6 @@ var artifact_extends = (undefined && undefined.__extends) || (function () {
 
 
 
-
 /**
  * The artifact details redirect page.
  */
@@ -757,8 +753,7 @@ var ArtifactRedirectPage = /** @class */ (function (_super) {
         var artifactId = this.artifactIdParam();
         var redirect = this.linkTo("/artifacts/" + encodeURIComponent(groupId) + "/" + encodeURIComponent(artifactId) + "/versions/latest");
         services.Services.getLoggerService().info("[ArtifactRedirectPage] Redirecting to: %s", redirect);
-        return (index_js_eager_default().createElement(react_router_dom_js_.BrowserRouter, null,
-            index_js_eager_default().createElement(react_router_js_.Redirect, { to: redirect })));
+        return (index_js_eager_default().createElement(react_router_dom_js_eager_.Redirect, { to: redirect }));
     };
     ArtifactRedirectPage.prototype.groupIdParam = function () {
         return this.getPathParam("groupId");
@@ -844,6 +839,8 @@ var artifactVersion = __webpack_require__(10564);
 
 
 
+// EXTERNAL MODULE: ./node_modules/react-router/esm/react-router.js + 3 modules
+var react_router = __webpack_require__(41153);
 ;// CONCATENATED MODULE: ./src/app/pages/root/root.tsx
 /**
  * @license
@@ -887,7 +884,7 @@ var RootRedirectPage = /** @class */ (function (_super) {
     }
     RootRedirectPage.prototype.renderPage = function () {
         var redirect = "/artifacts";
-        return (index_js_eager_default().createElement(react_router_js_.Redirect, { to: redirect }));
+        return (index_js_eager_default().createElement(react_router/* Redirect */.l_, { to: redirect }));
     };
     RootRedirectPage.prototype.initializePageState = function () {
         return {};
@@ -1064,15 +1061,15 @@ var App = /** @class */ (function (_super) {
             var location = props.location.pathname;
             return (index_js_eager_default().createElement(artifactVersion/* ArtifactVersionPage */.C, __assign({ key: location }, props)));
         };
-        return (index_js_eager_default().createElement(react_router_dom_js_.BrowserRouter, { basename: contextPath },
+        return (index_js_eager_default().createElement(react_router_dom_js_eager_.BrowserRouter, { basename: contextPath },
             index_js_eager_default().createElement(index_js_.Page, { className: "pf-m-redhat-font", isManagedSidebar: false, header: index_js_eager_default().createElement(header/* AppHeader */.t, null) },
-                index_js_eager_default().createElement(react_router_dom_js_.Switch, null,
-                    index_js_eager_default().createElement(react_router_dom_js_.Route, { path: '/', exact: true, component: RootRedirectPage }),
-                    index_js_eager_default().createElement(react_router_dom_js_.Route, { path: '/rules', exact: true, component: RulesPage }),
-                    index_js_eager_default().createElement(react_router_dom_js_.Route, { path: '/artifacts', exact: true, component: artifacts/* ArtifactsPage */.y }),
-                    index_js_eager_default().createElement(react_router_dom_js_.Route, { path: '/artifacts/:groupId/:artifactId', exact: true, component: ArtifactRedirectPage }),
-                    index_js_eager_default().createElement(react_router_dom_js_.Route, { path: '/artifacts/:groupId/:artifactId/versions/:version', exact: true, component: artifactVersionPage }),
-                    index_js_eager_default().createElement(react_router_dom_js_.Route, { component: NotFoundPage })))));
+                index_js_eager_default().createElement(react_router_dom_js_eager_.Switch, null,
+                    index_js_eager_default().createElement(react_router_dom_js_eager_.Route, { path: '/', exact: true, component: RootRedirectPage }),
+                    index_js_eager_default().createElement(react_router_dom_js_eager_.Route, { path: '/rules', exact: true, component: RulesPage }),
+                    index_js_eager_default().createElement(react_router_dom_js_eager_.Route, { path: '/artifacts', exact: true, component: artifacts/* ArtifactsPage */.y }),
+                    index_js_eager_default().createElement(react_router_dom_js_eager_.Route, { path: '/artifacts/:groupId/:artifactId', exact: true, component: ArtifactRedirectPage }),
+                    index_js_eager_default().createElement(react_router_dom_js_eager_.Route, { path: '/artifacts/:groupId/:artifactId/versions/:version', exact: true, component: artifactVersionPage }),
+                    index_js_eager_default().createElement(react_router_dom_js_eager_.Route, { component: NotFoundPage })))));
     };
     return App;
 }((index_js_eager_default()).PureComponent));
@@ -1169,4 +1166,4 @@ var ArtifactTypes = /** @class */ (function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=27.bundle.40c24c5d5a028d76518f.js.map
+//# sourceMappingURL=27.bundle.090d2bb53682685a701c.js.map

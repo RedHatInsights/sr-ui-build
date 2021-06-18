@@ -1,16 +1,16 @@
 {
     "apicurio_registry": {
         "entry": [
-            "/apicurio_registry.ca7d057b.js"
+            "/apicurio_registry.0ad437f2.js"
         ],
         "modules": [
             "/243.css",
             "/243.bundle.45e4ea8272ec3c6f0c34.js",
-            "/419.bundle.ad8f822ff54cdc0f2a68.js",
+            "/419.bundle.8bfd0a9a466664d75154.js",
             "/695.css",
             "/695.bundle.8ba7ec373690a187decd.js",
             "/37.css",
-            "/37.bundle.b5bf3e17b6fede35963f.js"
+            "/37.bundle.5f7196bce66780595160.js"
         ]
     }
 }
