@@ -1,3 +1,4 @@
+var apicurio_registry;
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -7220,16 +7221,6 @@ function invariant(condition, message) {
 
 /***/ }),
 
-/***/ 71635:
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-Promise.all(/* import() */[__webpack_require__.e(887), __webpack_require__.e(487), __webpack_require__.e(509), __webpack_require__.e(568), __webpack_require__.e(982), __webpack_require__.e(690), __webpack_require__.e(27)]).then(__webpack_require__.bind(__webpack_require__, 69976));
-
-
-/***/ }),
-
 /***/ 20384:
 /***/ ((module) => {
 
@@ -8391,6 +8382,53 @@ if ($gOPD) {
 module.exports = $gOPD;
 
 
+/***/ }),
+
+/***/ 23832:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+var moduleMap = {
+	"./FederatedArtifactsPage": () => {
+		return Promise.all([__webpack_require__.e(509), __webpack_require__.e(690), __webpack_require__.e(243)]).then(() => (() => ((__webpack_require__(70581)))));
+	},
+	"./FederatedArtifactRedirectPage": () => {
+		return Promise.all([__webpack_require__.e(509), __webpack_require__.e(419)]).then(() => (() => ((__webpack_require__(37854)))));
+	},
+	"./FederatedArtifactVersionPage": () => {
+		return Promise.all([__webpack_require__.e(887), __webpack_require__.e(509), __webpack_require__.e(982), __webpack_require__.e(695)]).then(() => (() => ((__webpack_require__(10046)))));
+	},
+	"./FederatedRulesPage": () => {
+		return Promise.all([__webpack_require__.e(509), __webpack_require__.e(37)]).then(() => (() => ((__webpack_require__(29997)))));
+	}
+};
+var get = (module, getScope) => {
+	__webpack_require__.R = getScope;
+	getScope = (
+		__webpack_require__.o(moduleMap, module)
+			? moduleMap[module]()
+			: Promise.resolve().then(() => {
+				throw new Error('Module "' + module + '" does not exist in container.');
+			})
+	);
+	__webpack_require__.R = undefined;
+	return getScope;
+};
+var init = (shareScope, initScope) => {
+	if (!__webpack_require__.S) return;
+	var oldScope = __webpack_require__.S["default"];
+	var name = "default"
+	if(oldScope && oldScope !== shareScope) throw new Error("Container initialization failed as it has already been initialized with a different share scope");
+	__webpack_require__.S[name] = shareScope;
+	return __webpack_require__.I(name, initScope);
+};
+
+// This exports getters to disallow modifications
+__webpack_require__.d(exports, {
+	get: () => (get),
+	init: () => (init)
+});
+
 /***/ })
 
 /******/ 	});
@@ -8483,7 +8521,7 @@ module.exports = $gOPD;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + ".bundle." + {"13":"bb472b23d1561f7ca925","15":"4422f026b5669ca90625","27":"090d2bb53682685a701c","127":"1e52ad44c44a3a265927","188":"269878e06de07664757a","239":"a4c071972ca0fed5f149","308":"5e56d6fbe99d526faa69","328":"f4e0be5a3aaff7c35c87","361":"c2029dfa90fc989b9dce","385":"d2c4bc04f890fd48ab36","487":"0e08f9a3077442446785","507":"5c835d09995f306d064f","509":"31568b2ba59bbab84dc9","568":"fb3eade55daec199f0c3","669":"87bf115a9f3d94e7130c","690":"7f855125ac850ce0b038","700":"7112d44743cd40580809","741":"f531dd45d16959183d5a","764":"aa294f1b92910e79e010","803":"00cf10954e5ceff9b1a1","847":"1307ee11e84ec50e14c0","854":"1f947dcd0abd41120d79","885":"4a2b447904b9c9636194","887":"acb36e3ed365d954168e","910":"cde67470cf117e7ef9f3","981":"5ec2e5b12e8de882f7d4","982":"04a51b83138b767ac8bc"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + ".bundle." + {"13":"bb472b23d1561f7ca925","15":"4422f026b5669ca90625","37":"5f7196bce66780595160","127":"1e52ad44c44a3a265927","188":"269878e06de07664757a","239":"a4c071972ca0fed5f149","243":"45e4ea8272ec3c6f0c34","308":"5e56d6fbe99d526faa69","328":"f4e0be5a3aaff7c35c87","361":"c2029dfa90fc989b9dce","385":"d2c4bc04f890fd48ab36","419":"8bfd0a9a466664d75154","507":"5c835d09995f306d064f","509":"589aedd382b3f1524b14","568":"fb3eade55daec199f0c3","669":"87bf115a9f3d94e7130c","690":"7f855125ac850ce0b038","695":"8ba7ec373690a187decd","700":"7112d44743cd40580809","741":"f531dd45d16959183d5a","764":"aa294f1b92910e79e010","803":"00cf10954e5ceff9b1a1","847":"1307ee11e84ec50e14c0","854":"1f947dcd0abd41120d79","885":"4a2b447904b9c9636194","887":"acb36e3ed365d954168e","910":"cde67470cf117e7ef9f3","981":"5ec2e5b12e8de882f7d4","982":"04a51b83138b767ac8bc"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -8785,6 +8823,12 @@ module.exports = $gOPD;
 /******/ 		});
 /******/ 		var installedModules = {};
 /******/ 		var moduleToHandlerMapping = {
+/******/ 			61568: () => (loadSingletonVersionCheckFallback("default", "react-dom", [4,17,0,1], () => (() => (__webpack_require__(73935))))),
+/******/ 			86854: () => (loadStrictVersionCheckFallback("default", "ace-builds", [4,1,4,8], () => (__webpack_require__.e(239).then(() => (() => (__webpack_require__(53239))))))),
+/******/ 			20847: () => (loadStrictVersionCheckFallback("default", "moment", [4,2,24,0], () => (Promise.all([__webpack_require__.e(385), __webpack_require__.e(700)]).then(() => (() => (__webpack_require__(30381))))))),
+/******/ 			9876: () => (loadStrictVersionCheckFallback("default", "styled-components", [1,4,2,0], () => (__webpack_require__.e(910).then(() => (() => (__webpack_require__(24910))))))),
+/******/ 			12248: () => (loadStrictVersionCheckFallback("default", "mobx", [1,4,3,1], () => (__webpack_require__.e(188).then(() => (() => (__webpack_require__(22188))))))),
+/******/ 			71792: () => (loadStrictVersionCheckFallback("default", "to-arraybuffer", [1,1,0,1], () => (__webpack_require__.e(507).then(() => (() => (__webpack_require__(22885))))))),
 /******/ 			2027: () => (loadStrictVersionCheckFallback("default", "axios", [4,0,21,1], () => (__webpack_require__.e(669).then(() => (() => (__webpack_require__(9669))))))),
 /******/ 			16957: () => (loadStrictVersionCheckFallback("default", "yaml", [1,1,10,0], () => (Promise.all([__webpack_require__.e(764), __webpack_require__.e(741)]).then(() => (() => (__webpack_require__(69741))))))),
 /******/ 			34260: () => (loadStrictVersionCheckFallback("default", "keycloak-js", [1,10,0,2], () => (__webpack_require__.e(13).then(() => (() => (__webpack_require__(32385))))))),
@@ -8792,14 +8836,8 @@ module.exports = $gOPD;
 /******/ 			80250: () => (loadStrictVersionCheckFallback("default", "react-ace", [4,8,1,0], () => (Promise.all([__webpack_require__.e(981), __webpack_require__.e(854)]).then(() => (() => (__webpack_require__(74981))))))),
 /******/ 			90847: () => (loadStrictVersionCheckFallback("default", "@patternfly/react-core", [4,4,121,1], () => (Promise.all([__webpack_require__.e(127), __webpack_require__.e(308), __webpack_require__.e(568)]).then(() => (() => (__webpack_require__(62308))))))),
 /******/ 			93179: () => (loadStrictVersionCheckFallback("default", "@patternfly/react-icons", [4,4,10,7], () => (Promise.all([__webpack_require__.e(127), __webpack_require__.e(15)]).then(() => (() => (__webpack_require__(67015))))))),
-/******/ 			61568: () => (loadSingletonVersionCheckFallback("default", "react-dom", [4,17,0,1], () => (() => (__webpack_require__(73935))))),
 /******/ 			17189: () => (loadStrictVersionCheckFallback("default", "redoc", [7,2,0,0,,"rc",28], () => (Promise.all([__webpack_require__.e(764), __webpack_require__.e(361), __webpack_require__.e(568), __webpack_require__.e(328)]).then(() => (() => (__webpack_require__(72361))))))),
 /******/ 			37073: () => (loadStrictVersionCheckFallback("default", "react-moment", [4,0,9,7], () => (Promise.all([__webpack_require__.e(803), __webpack_require__.e(847)]).then(() => (() => (__webpack_require__(94803))))))),
-/******/ 			86854: () => (loadStrictVersionCheckFallback("default", "ace-builds", [4,1,4,8], () => (__webpack_require__.e(239).then(() => (() => (__webpack_require__(53239))))))),
-/******/ 			20847: () => (loadStrictVersionCheckFallback("default", "moment", [4,2,24,0], () => (Promise.all([__webpack_require__.e(385), __webpack_require__.e(700)]).then(() => (() => (__webpack_require__(30381))))))),
-/******/ 			9876: () => (loadStrictVersionCheckFallback("default", "styled-components", [1,4,2,0], () => (__webpack_require__.e(910).then(() => (() => (__webpack_require__(24910))))))),
-/******/ 			12248: () => (loadStrictVersionCheckFallback("default", "mobx", [1,4,3,1], () => (__webpack_require__.e(188).then(() => (() => (__webpack_require__(22188))))))),
-/******/ 			71792: () => (loadStrictVersionCheckFallback("default", "to-arraybuffer", [1,1,0,1], () => (__webpack_require__.e(507).then(() => (() => (__webpack_require__(22885))))))),
 /******/ 			48121: () => (loadSingletonVersionCheckFallback("default", "react", [4,17,0,1], () => (() => (__webpack_require__(67294)))))
 /******/ 		};
 /******/ 		var initialConsumes = [48121];
@@ -8924,11 +8962,11 @@ module.exports = $gOPD;
 /******/ 		}
 /******/ 		// object to store loaded CSS chunks
 /******/ 		var installedCssChunks = {
-/******/ 			143: 0
+/******/ 			291: 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"27":1,"308":1,"487":1,"509":1};
+/******/ 			var cssChunks = {"37":1,"243":1,"308":1,"509":1,"695":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
@@ -8951,7 +8989,7 @@ module.exports = $gOPD;
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			143: 0
+/******/ 			291: 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -8963,7 +9001,7 @@ module.exports = $gOPD;
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(!/^(487|568|847|854)$/.test(chunkId)) {
+/******/ 						if(!/^(568|847|854)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -9036,8 +9074,9 @@ module.exports = $gOPD;
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__(71635);
+/******/ 	var __webpack_exports__ = __webpack_require__(23832);
+/******/ 	apicurio_registry = __webpack_exports__;
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=app.bundle.ff79cce1eea9a62117b2.js.map
+//# sourceMappingURL=apicurio_registry.a2e535c8.js.map

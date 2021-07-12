@@ -2056,6 +2056,16 @@ var ConfigService = /** @class */ (function () {
         }
         return {};
     };
+    ConfigService.prototype.authGetToken = function () {
+        if (this.config.auth) {
+            var auth = this.config.auth;
+            return auth.getToken;
+        }
+        return function () {
+            console.error("[ConfigService] Missing: 'getToken' from auth config.");
+            return Promise.resolve("");
+        };
+    };
     ConfigService.prototype.featureMultiTenant = function () {
         return this.features().multiTenant || false;
     };
@@ -2401,7 +2411,7 @@ var GroupsService = /** @class */ (function (_super) {
         try {
             var xmlParser = new DOMParser();
             var dom = xmlParser.parseFromString(content, "application/xml");
-            var isParseError = dom.documentElement.nodeName === "parsererror";
+            var isParseError = dom.getElementsByTagName("parsererror").length !== 0;
             return !isParseError;
         }
         catch (e) {
@@ -2675,6 +2685,14 @@ var AuthService = /** @class */ (function () {
                     return Promise.resolve(config);
                 });
             }
+            else if (self.config.authType() === "gettoken") {
+                _this.logger.info("[AuthService] Using 'getToken' auth type.");
+                return self.config.authGetToken()().then(function (token) {
+                    _this.logger.info("[AuthService] Token acquired.");
+                    config.headers.Authorization = "Bearer " + token;
+                    return Promise.resolve(config);
+                });
+            }
             else {
                 return Promise.resolve(config);
             }
@@ -2834,4 +2852,4 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW
 /***/ })
 
 }]);
-//# sourceMappingURL=509.bundle.31568b2ba59bbab84dc9.js.map
+//# sourceMappingURL=509.bundle.589aedd382b3f1524b14.js.map
