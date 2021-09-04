@@ -8384,22 +8384,25 @@ module.exports = $gOPD;
 
 /***/ }),
 
-/***/ 23832:
+/***/ 70921:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 var moduleMap = {
 	"./FederatedArtifactsPage": () => {
-		return Promise.all([__webpack_require__.e(509), __webpack_require__.e(690), __webpack_require__.e(243)]).then(() => (() => ((__webpack_require__(70581)))));
+		return Promise.all([__webpack_require__.e(705), __webpack_require__.e(7), __webpack_require__.e(234), __webpack_require__.e(240)]).then(() => (() => ((__webpack_require__(70581)))));
 	},
 	"./FederatedArtifactRedirectPage": () => {
-		return Promise.all([__webpack_require__.e(509), __webpack_require__.e(419)]).then(() => (() => ((__webpack_require__(37854)))));
+		return Promise.all([__webpack_require__.e(705), __webpack_require__.e(7), __webpack_require__.e(324)]).then(() => (() => ((__webpack_require__(37854)))));
 	},
 	"./FederatedArtifactVersionPage": () => {
-		return Promise.all([__webpack_require__.e(887), __webpack_require__.e(509), __webpack_require__.e(982), __webpack_require__.e(695)]).then(() => (() => ((__webpack_require__(10046)))));
+		return Promise.all([__webpack_require__.e(887), __webpack_require__.e(705), __webpack_require__.e(7), __webpack_require__.e(982), __webpack_require__.e(641)]).then(() => (() => ((__webpack_require__(10046)))));
 	},
 	"./FederatedRulesPage": () => {
-		return Promise.all([__webpack_require__.e(509), __webpack_require__.e(37)]).then(() => (() => ((__webpack_require__(29997)))));
+		return Promise.all([__webpack_require__.e(705), __webpack_require__.e(400)]).then(() => (() => ((__webpack_require__(87335)))));
+	},
+	"./FederatedRolesPage": () => {
+		return Promise.all([__webpack_require__.e(705), __webpack_require__.e(570), __webpack_require__.e(884)]).then(() => (() => ((__webpack_require__(30069)))));
 	}
 };
 var get = (module, getScope) => {
@@ -8521,7 +8524,7 @@ __webpack_require__.d(exports, {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + ".bundle." + {"13":"bb472b23d1561f7ca925","15":"4422f026b5669ca90625","37":"5f7196bce66780595160","127":"1e52ad44c44a3a265927","188":"269878e06de07664757a","239":"a4c071972ca0fed5f149","243":"45e4ea8272ec3c6f0c34","308":"5e56d6fbe99d526faa69","328":"f4e0be5a3aaff7c35c87","361":"c2029dfa90fc989b9dce","385":"d2c4bc04f890fd48ab36","419":"8bfd0a9a466664d75154","507":"5c835d09995f306d064f","509":"589aedd382b3f1524b14","568":"fb3eade55daec199f0c3","669":"87bf115a9f3d94e7130c","690":"7f855125ac850ce0b038","695":"8ba7ec373690a187decd","700":"7112d44743cd40580809","741":"f531dd45d16959183d5a","764":"aa294f1b92910e79e010","803":"00cf10954e5ceff9b1a1","847":"1307ee11e84ec50e14c0","854":"1f947dcd0abd41120d79","885":"4a2b447904b9c9636194","887":"acb36e3ed365d954168e","910":"cde67470cf117e7ef9f3","981":"5ec2e5b12e8de882f7d4","982":"04a51b83138b767ac8bc"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + ".bundle." + {"7":"4d300bccc64048babbcf","13":"bb472b23d1561f7ca925","15":"4422f026b5669ca90625","127":"1e52ad44c44a3a265927","188":"269878e06de07664757a","234":"b285ff5171aa5fcb07ce","239":"a4c071972ca0fed5f149","240":"a61dac9e61599a340556","308":"5e56d6fbe99d526faa69","324":"f9f91a85994dcce2e7e1","328":"f4e0be5a3aaff7c35c87","361":"c2029dfa90fc989b9dce","385":"d2c4bc04f890fd48ab36","400":"a21328d0006846e558a4","507":"5c835d09995f306d064f","568":"fb3eade55daec199f0c3","570":"c9e9c7ca162589f0fb00","641":"9d26895b18fa3fe8396e","669":"87bf115a9f3d94e7130c","700":"7112d44743cd40580809","705":"6227e202e9bc0b1116f5","741":"f531dd45d16959183d5a","764":"aa294f1b92910e79e010","803":"00cf10954e5ceff9b1a1","847":"1307ee11e84ec50e14c0","854":"1f947dcd0abd41120d79","884":"33af5c232be7a97925b8","885":"4a2b447904b9c9636194","887":"acb36e3ed365d954168e","910":"cde67470cf117e7ef9f3","981":"5ec2e5b12e8de882f7d4","982":"4014e9587b29288aa569"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -8832,10 +8835,10 @@ __webpack_require__.d(exports, {
 /******/ 			2027: () => (loadStrictVersionCheckFallback("default", "axios", [4,0,21,1], () => (__webpack_require__.e(669).then(() => (() => (__webpack_require__(9669))))))),
 /******/ 			16957: () => (loadStrictVersionCheckFallback("default", "yaml", [1,1,10,0], () => (Promise.all([__webpack_require__.e(764), __webpack_require__.e(741)]).then(() => (() => (__webpack_require__(69741))))))),
 /******/ 			34260: () => (loadStrictVersionCheckFallback("default", "keycloak-js", [1,10,0,2], () => (__webpack_require__.e(13).then(() => (() => (__webpack_require__(32385))))))),
-/******/ 			76007: () => (loadSingletonVersionCheckFallback("default", "react-router-dom", [4,5,2,0], () => (() => (__webpack_require__(73727))))),
 /******/ 			80250: () => (loadStrictVersionCheckFallback("default", "react-ace", [4,8,1,0], () => (Promise.all([__webpack_require__.e(981), __webpack_require__.e(854)]).then(() => (() => (__webpack_require__(74981))))))),
 /******/ 			90847: () => (loadStrictVersionCheckFallback("default", "@patternfly/react-core", [4,4,121,1], () => (Promise.all([__webpack_require__.e(127), __webpack_require__.e(308), __webpack_require__.e(568)]).then(() => (() => (__webpack_require__(62308))))))),
 /******/ 			93179: () => (loadStrictVersionCheckFallback("default", "@patternfly/react-icons", [4,4,10,7], () => (Promise.all([__webpack_require__.e(127), __webpack_require__.e(15)]).then(() => (() => (__webpack_require__(67015))))))),
+/******/ 			76007: () => (loadSingletonVersionCheckFallback("default", "react-router-dom", [4,5,2,0], () => (() => (__webpack_require__(73727))))),
 /******/ 			17189: () => (loadStrictVersionCheckFallback("default", "redoc", [7,2,0,0,,"rc",28], () => (Promise.all([__webpack_require__.e(764), __webpack_require__.e(361), __webpack_require__.e(568), __webpack_require__.e(328)]).then(() => (() => (__webpack_require__(72361))))))),
 /******/ 			37073: () => (loadStrictVersionCheckFallback("default", "react-moment", [4,0,9,7], () => (Promise.all([__webpack_require__.e(803), __webpack_require__.e(847)]).then(() => (() => (__webpack_require__(94803))))))),
 /******/ 			48121: () => (loadSingletonVersionCheckFallback("default", "react", [4,17,0,1], () => (() => (__webpack_require__(67294)))))
@@ -8852,22 +8855,24 @@ __webpack_require__.d(exports, {
 /******/ 			}
 /******/ 		});
 /******/ 		var chunkMapping = {
+/******/ 			"7": [
+/******/ 				76007
+/******/ 			],
 /******/ 			"328": [
 /******/ 				9876,
 /******/ 				12248,
 /******/ 				71792
 /******/ 			],
-/******/ 			"509": [
+/******/ 			"568": [
+/******/ 				61568
+/******/ 			],
+/******/ 			"705": [
 /******/ 				2027,
 /******/ 				16957,
 /******/ 				34260,
-/******/ 				76007,
 /******/ 				80250,
 /******/ 				90847,
 /******/ 				93179
-/******/ 			],
-/******/ 			"568": [
-/******/ 				61568
 /******/ 			],
 /******/ 			"847": [
 /******/ 				20847
@@ -8935,7 +8940,14 @@ __webpack_require__.d(exports, {
 /******/ 			linkTag.onerror = linkTag.onload = onLinkComplete;
 /******/ 			linkTag.href = fullhref;
 /******/ 		
-/******/ 			document.head.appendChild(linkTag);
+/******/ 			((linkTag) => {
+/******/ 			        const preloadLinkTag = document.createElement('link')
+/******/ 			        preloadLinkTag.rel = 'preload'
+/******/ 			        preloadLinkTag.as = 'style'
+/******/ 			        preloadLinkTag.href = linkTag.href
+/******/ 			        document.head.appendChild(preloadLinkTag)
+/******/ 			        document.head.appendChild(linkTag)
+/******/ 			      })(linkTag)
 /******/ 			return linkTag;
 /******/ 		};
 /******/ 		var findStylesheet = (href, fullhref) => {
@@ -8966,7 +8978,7 @@ __webpack_require__.d(exports, {
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"37":1,"243":1,"308":1,"509":1,"695":1};
+/******/ 			var cssChunks = {"240":1,"308":1,"400":1,"641":1,"705":1,"884":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
@@ -9001,7 +9013,7 @@ __webpack_require__.d(exports, {
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(!/^(568|847|854)$/.test(chunkId)) {
+/******/ 						if(!/^(568|7|847|854)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -9074,9 +9086,9 @@ __webpack_require__.d(exports, {
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__(23832);
+/******/ 	var __webpack_exports__ = __webpack_require__(70921);
 /******/ 	apicurio_registry = __webpack_exports__;
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=apicurio_registry.a2e535c8.js.map
+//# sourceMappingURL=apicurio_registry.60d12ae2.js.map

@@ -96,8 +96,8 @@ var If = /** @class */ (function (_super) {
 /* harmony import */ var _components_modals__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(20301);
 /* harmony import */ var _components_modals__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(49746);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(21467);
-/* harmony import */ var _models__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(89929);
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(94830);
+/* harmony import */ var _models__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(19162);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(46768);
 /* harmony import */ var _components_modals_pleaseWaitModal__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(38304);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -351,18 +351,10 @@ var ArtifactVersionPage = /** @class */ (function (_super) {
         return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_9__/* .IfFeature */ .QT, { feature: "breadcrumbs", is: true },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSection, { className: "ps_header-breadcrumbs", variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSectionVariants.light, children: breadcrumbs })),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSection, { className: "ps_artifacts-header", variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSectionVariants.light },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_pageheader__WEBPACK_IMPORTED_MODULE_4__/* .ArtifactVersionPageHeader */ .p, { versions: this.versions(), version: this.versionParam(), onUploadVersion: this.onUploadVersion, onDeleteArtifact: this.onDeleteArtifact, groupId: groupId, artifactId: this.artifactId() })),
-            this.isLoading() ?
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSection, { variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSectionVariants.default, isFilled: true },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Flex, null,
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.FlexItem, null,
-                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Spinner, { size: "lg" })),
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.FlexItem, null,
-                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Loading, please wait..."))))
-                :
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSection, { variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSectionVariants.light, isFilled: true, padding: { default: "noPadding" }, className: "artifact-details-main" },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Tabs, { className: "artifact-page-tabs", unmountOnExit: true, isFilled: true, activeKey: this.state.activeTabKey, children: tabs, onSelect: this.handleTabClick })),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSection, { className: "ps_artifact-version-header", variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSectionVariants.light },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_pageheader__WEBPACK_IMPORTED_MODULE_4__/* .ArtifactVersionPageHeader */ .p, { title: this.nameOrId(), versions: this.versions(), version: this.versionParam(), onUploadVersion: this.onUploadVersion, onDeleteArtifact: this.onDeleteArtifact, groupId: groupId, artifactId: this.artifactId() })),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSection, { variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSectionVariants.light, isFilled: true, padding: { default: "noPadding" }, className: "artifact-details-main" },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Tabs, { className: "artifact-page-tabs", id: "artifact-page-tabs", unmountOnExit: true, isFilled: false, activeKey: this.state.activeTabKey, children: tabs, onSelect: this.handleTabClick })),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Modal, { title: "Upload Artifact Version", variant: "large", isOpen: this.state.isUploadModalOpen, onClose: this.onUploadModalClose, className: "upload-artifact-modal pf-m-redhat-font", actions: [
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Button, { key: "upload", variant: "primary", "data-testid": "modal-btn-upload", onClick: this.doUploadArtifactVersion, isDisabled: !this.state.isUploadFormValid }, "Upload"),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Button, { key: "cancel", variant: "link", "data-testid": "modal-btn-cancel", onClick: this.onUploadModalClose }, "Cancel")
@@ -442,6 +434,12 @@ var ArtifactVersionPage = /** @class */ (function (_super) {
     };
     ArtifactVersionPage.prototype.rules = function () {
         return this.state.rules ? this.state.rules : [];
+    };
+    ArtifactVersionPage.prototype.nameOrId = function () {
+        if (!this.state.artifact) {
+            return "";
+        }
+        return this.state.artifact.name ? this.state.artifact.name : this.state.artifact.id;
     };
     ArtifactVersionPage.prototype.versions = function () {
         return this.state.versions ? this.state.versions : [];
@@ -629,9 +627,7 @@ var EditMetaDataModal = /** @class */ (function (_super) {
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(21467);
 /* harmony import */ var _version_selector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(70823);
-/* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(93179);
-/* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_patternfly_react_icons__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_common_ifFeature__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(13294);
+/* harmony import */ var _components_common_ifFeature__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(13294);
 /**
  * @license
  * Copyright 2020 JBoss Inc
@@ -667,7 +663,6 @@ var __extends = (undefined && undefined.__extends) || (function () {
 
 
 
-
 /**
  * Models the page header for the Artifact page.
  */
@@ -680,14 +675,13 @@ var ArtifactVersionPageHeader = /** @class */ (function (_super) {
         return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Flex, { className: "example-border" },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.FlexItem, null,
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.TextContent, null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Text, { component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.TextVariants.h1 }, "Artifact Details"))),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Text, { component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.TextVariants.h1 }, this.props.title))),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.FlexItem, { align: { default: 'alignRight' } },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_version_selector__WEBPACK_IMPORTED_MODULE_3__/* .VersionSelector */ .Q, { version: this.props.version, versions: this.props.versions, groupId: this.props.groupId, artifactId: this.props.artifactId }),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_2__/* .IfAuth */ .No, { isDeveloper: true },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_common_ifFeature__WEBPACK_IMPORTED_MODULE_5__/* .IfFeature */ .Q, { feature: "readOnly", isNot: true },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Button, { id: "upload-version-button", variant: "secondary", "data-testid": "header-btn-upload-version", onClick: this.props.onUploadVersion }, "Upload new version"),
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Button, { id: "delete-artifact-button", variant: "danger", "data-testid": "header-btn-delete", onClick: this.props.onDeleteArtifact },
-                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_icons__WEBPACK_IMPORTED_MODULE_4__.TrashIcon, null)))))));
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_common_ifFeature__WEBPACK_IMPORTED_MODULE_4__/* .IfFeature */ .Q, { feature: "readOnly", isNot: true },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Button, { id: "delete-artifact-button", variant: "secondary", "data-testid": "header-btn-delete", onClick: this.props.onDeleteArtifact }, "Delete"),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Button, { id: "upload-version-button", variant: "primary", "data-testid": "header-btn-upload-version", onClick: this.props.onUploadVersion }, "Upload new version"))))));
     };
     ArtifactVersionPageHeader.prototype.initializeState = function () {
         return {};
@@ -717,7 +711,7 @@ var ArtifactVersionPageHeader = /** @class */ (function (_super) {
 /* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_moment__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(76007);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(94830);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(46768);
 /**
  * @license
  * Copyright 2020 JBoss Inc
@@ -835,7 +829,7 @@ var VersionSelector = /** @class */ (function (_super) {
 /* harmony import */ var ace_builds_src_noconflict_theme_monokai__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(ace_builds_src_noconflict_theme_monokai__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(90847);
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(94830);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(46768);
 /**
  * @license
  * Copyright 2020 JBoss Inc
@@ -980,6 +974,8 @@ var ContentTabContent = /** @class */ (function (_super) {
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21467);
 /* harmony import */ var redoc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17189);
 /* harmony import */ var redoc__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(redoc__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _errorTab__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(75921);
+/* harmony import */ var src_services__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(46768);
 /**
  * @license
  * Copyright 2020 JBoss Inc
@@ -1013,6 +1009,8 @@ var __extends = (undefined && undefined.__extends) || (function () {
 
 
 
+
+
 /**
  * Models the content of the Artifact Info tab.
  */
@@ -1022,6 +1020,9 @@ var DocumentationTabContent = /** @class */ (function (_super) {
         return _super.call(this, props) || this;
     }
     DocumentationTabContent.prototype.render = function () {
+        if (this.isError()) {
+            return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_errorTab__WEBPACK_IMPORTED_MODULE_3__/* .ErrorTabContent */ .L, { error: { errorMessage: "Artifact isn't a valid OpenAPI structure", error: this.state.error } });
+        }
         var visualizer = null;
         if (this.props.artifactType === "OPENAPI") {
             visualizer = react__WEBPACK_IMPORTED_MODULE_0___default().createElement(redoc__WEBPACK_IMPORTED_MODULE_2__.RedocStandalone, { spec: this.state.parsedContent });
@@ -1036,11 +1037,147 @@ var DocumentationTabContent = /** @class */ (function (_super) {
         }
     };
     DocumentationTabContent.prototype.initializeState = function () {
-        return {
-            parsedContent: JSON.parse(this.props.artifactContent)
-        };
+        try {
+            return {
+                parsedContent: JSON.parse(this.props.artifactContent),
+                error: undefined
+            };
+        }
+        catch (ex) {
+            src_services__WEBPACK_IMPORTED_MODULE_4__.Services.getLoggerService().warn("Failed to parse content:");
+            src_services__WEBPACK_IMPORTED_MODULE_4__.Services.getLoggerService().error(ex);
+            return {
+                parsedContent: undefined,
+                error: ex
+            };
+        }
+    };
+    DocumentationTabContent.prototype.isError = function () {
+        if (this.state.error) {
+            return true;
+        }
+        else {
+            return false;
+        }
     };
     return DocumentationTabContent;
+}(_components__WEBPACK_IMPORTED_MODULE_1__/* .PureComponent */ .Vx));
+
+
+
+/***/ }),
+
+/***/ 75921:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "L": () => (/* binding */ ErrorTabContent)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48121);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21467);
+/* harmony import */ var react_ace__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(80250);
+/* harmony import */ var react_ace__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_ace__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var ace_builds_src_noconflict_mode_text__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(79253);
+/* harmony import */ var ace_builds_src_noconflict_mode_text__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ace_builds_src_noconflict_mode_text__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var ace_builds_src_noconflict_theme_tomorrow__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(42557);
+/* harmony import */ var ace_builds_src_noconflict_theme_tomorrow__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ace_builds_src_noconflict_theme_tomorrow__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(90847);
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(93179);
+/* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_patternfly_react_icons__WEBPACK_IMPORTED_MODULE_6__);
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+
+
+
+
+var ErrorTabContent = /** @class */ (function (_super) {
+    __extends(ErrorTabContent, _super);
+    function ErrorTabContent(props) {
+        var _this = _super.call(this, props) || this;
+        _this.showDetails = function () {
+            _this.setSingleState("isShowDetails", true);
+        };
+        return _this;
+    }
+    ErrorTabContent.prototype.render = function () {
+        return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "centerizer" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__.EmptyState, { variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__.EmptyStateVariant.large },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__.EmptyStateIcon, { icon: _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_6__.ExclamationTriangleIcon }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__.Title, { headingLevel: "h5", size: "lg" }, this.errorMessage()),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__.EmptyStateBody, null, this.errorDescription()),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__.EmptyStateSecondaryActions, null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__.Button, { variant: "link", "data-testid": "error-btn-details", onClick: this.showDetails }, "Show details"))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "separator" }, "\u00A0"),
+            this.state.isShowDetails ?
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "ace-wrapper pf-c-empty-state pf-m-lg", id: "ace-wrapper" },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react_ace__WEBPACK_IMPORTED_MODULE_2___default()), { "data-testid": "ace-details", mode: "json", theme: "tomorrow", name: "errorDetail", className: "errorDetail", width: this.state.editorWidth, height: this.state.editorHeight, fontSize: 14, showPrintMargin: false, showGutter: false, highlightActiveLine: false, value: this.errorDetail(), readOnly: true, setOptions: {
+                            enableBasicAutocompletion: false,
+                            enableLiveAutocompletion: false,
+                            enableSnippets: false,
+                            showLineNumbers: true,
+                            tabSize: 2,
+                            useWorker: false
+                        } }))
+                :
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null)));
+    };
+    ErrorTabContent.prototype.initializeState = function () {
+        return {
+            editorHeight: "250px",
+            editorWidth: "100%",
+            isShowDetails: false
+        };
+    };
+    ErrorTabContent.prototype.errorMessage = function () {
+        if (this.props.error) {
+            return this.props.error.errorMessage;
+        }
+        else {
+            return "Internal server error";
+        }
+    };
+    // Error description can be in node children - if it is missing, default description is used
+    ErrorTabContent.prototype.errorDescription = function () {
+        if (this.props.children) {
+            return this.props.children;
+        }
+        else {
+            return ("The content you are trying to visualize is not valid (we could not parse it).  If possible, we'll try to provide you with some more information about " +
+                "the problem (see below).");
+        }
+    };
+    ErrorTabContent.prototype.errorDetail = function () {
+        if (this.props.error && this.props.error.error && this.props.error.error.detail) {
+            return this.props.error.error.detail;
+        }
+        else if (this.props.error && this.props.error.error && this.props.error.error.message) {
+            return this.props.error.error.message;
+        }
+        else if (this.props.error && this.props.error.error) {
+            return JSON.stringify(this.props.error.error, null, 3);
+        }
+        else {
+            return "Error info not available";
+        }
+    };
+    return ErrorTabContent;
 }(_components__WEBPACK_IMPORTED_MODULE_1__/* .PureComponent */ .Vx));
 
 
@@ -1122,14 +1259,16 @@ var InfoTabContent = /** @class */ (function (_super) {
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__.Split, null,
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__.SplitItem, { className: "type" },
                             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_1__/* .ArtifactTypeIcon */ .fN, { type: this.props.artifact.type })),
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__.SplitItem, { className: "title", isFilled: true }, this.nameOrId()),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__.SplitItem, { className: "title", isFilled: true }, "Version Metadata"),
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__.SplitItem, { className: "actions" },
                             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_1__/* .IfAuth */ .No, { isDeveloper: true },
                                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_common_ifFeature__WEBPACK_IMPORTED_MODULE_5__/* .IfFeature */ .Q, { feature: "readOnly", isNot: true },
                                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__.Button, { id: "edit-action", "data-testid": "artifact-btn-edit", title: "Edit artifact meta-data", onClick: this.props.onEditMetaData, variant: "plain" },
                                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_icons__WEBPACK_IMPORTED_MODULE_3__.EditIcon, null))))))),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "description" }, this.description()),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "metaData" },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "metaDataItem" },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "label" }, "Name"),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "value" }, this.props.artifact.name)),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_common_if__WEBPACK_IMPORTED_MODULE_6__.If, { condition: this.isArtifactInGroup },
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "metaDataItem" },
                             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "label" }, "Group"),
@@ -1147,12 +1286,19 @@ var InfoTabContent = /** @class */ (function (_super) {
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "metaDataItem" },
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "label" }, "Modified"),
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "value" },
-                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react_moment__WEBPACK_IMPORTED_MODULE_4___default()), { date: this.props.artifact.modifiedOn, fromNow: true })))),
+                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react_moment__WEBPACK_IMPORTED_MODULE_4___default()), { date: this.props.artifact.modifiedOn, fromNow: true }))),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "metaDataItem" },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "label" }, "Global ID"),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "value" }, this.props.artifact.globalId)),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "metaDataItem" },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "label" }, "Content ID"),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "value" }, this.props.artifact.contentId))),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "description" }, this.description()),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "labels" }, this.labels().map(function (label) {
                     return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__.Badge, { key: label, isRead: true }, label);
                 })),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "actions" },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__.Button, { id: "download-action", "data-testid": "artifact-btn-download", title: "Download artifact content", onClick: this.props.onDownloadArtifact, variant: "primary" },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__.Button, { id: "download-action", "data-testid": "artifact-btn-download", title: "Download artifact content", onClick: this.props.onDownloadArtifact, variant: "secondary" },
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_icons__WEBPACK_IMPORTED_MODULE_3__.DownloadIcon, null),
                         " Download"))),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__.FlexItem, { className: "artifact-rules" },
@@ -1297,4 +1443,4 @@ var UploadVersionForm = /** @class */ (function (_super) {
 /***/ })
 
 }]);
-//# sourceMappingURL=982.bundle.04a51b83138b767ac8bc.js.map
+//# sourceMappingURL=982.bundle.4014e9587b29288aa569.js.map

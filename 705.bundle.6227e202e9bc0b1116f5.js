@@ -1,4 +1,4 @@
-(self["webpackChunk_apicurio_registry_ui"] = self["webpackChunk_apicurio_registry_ui"] || []).push([[509],{
+(self["webpackChunk_apicurio_registry_ui"] = self["webpackChunk_apicurio_registry_ui"] || []).push([[705],{
 
 /***/ 52445:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -9,7 +9,7 @@
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48121);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(94830);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(46768);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -106,177 +106,6 @@ var PureComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 67030:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "N": () => (/* binding */ IfAuth)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48121);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _baseComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52445);
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(94830);
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-/**
- * @license
- * Copyright 2020 JBoss Inc
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-
-
-/**
- * Wrapper around a set of arbitrary child elements and displays them only if the
- * indicated authentication parameters are true.
- */
-var IfAuth = /** @class */ (function (_super) {
-    __extends(IfAuth, _super);
-    function IfAuth(props) {
-        return _super.call(this, props) || this;
-    }
-    IfAuth.prototype.render = function () {
-        if (this.accept()) {
-            return react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), { children: this.props.children });
-        }
-        else {
-            return react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
-        }
-    };
-    IfAuth.prototype.initializeState = function () {
-        return {};
-    };
-    IfAuth.prototype.accept = function () {
-        var auth = _services__WEBPACK_IMPORTED_MODULE_2__.Services.getAuthService();
-        var rval = true;
-        if (this.props.enabled !== undefined) {
-            rval = rval && (auth.isAuthEnabled() === this.props.enabled);
-        }
-        if (this.props.isAuthenticated !== undefined) {
-            rval = rval && (auth.isAuthenticated() === this.props.isAuthenticated);
-        }
-        if (this.props.isAdmin !== undefined) {
-            rval = rval && (auth.isUserAdmin() === this.props.isAdmin);
-        }
-        if (this.props.isDeveloper !== undefined) {
-            rval = rval && (auth.isUserDeveloper() === this.props.isDeveloper);
-        }
-        return rval;
-    };
-    return IfAuth;
-}(_baseComponent__WEBPACK_IMPORTED_MODULE_1__/* .PureComponent */ .V));
-
-
-
-/***/ }),
-
-/***/ 13294:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Q": () => (/* binding */ IfFeature)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48121);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _baseComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52445);
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(94830);
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-/**
- * @license
- * Copyright 2020 JBoss Inc
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-
-
-/**
- * Wrapper around a set of arbitrary child elements and displays them only if the
- * indicated feature matches the given criteria.  Use this if you want to show/hide
- * UI elements based on the configured application feature set.
- */
-var IfFeature = /** @class */ (function (_super) {
-    __extends(IfFeature, _super);
-    function IfFeature(props) {
-        return _super.call(this, props) || this;
-    }
-    IfFeature.prototype.render = function () {
-        if (this.accept()) {
-            return react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), { children: this.props.children });
-        }
-        else {
-            return react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
-        }
-    };
-    IfFeature.prototype.initializeState = function () {
-        return {};
-    };
-    IfFeature.prototype.accept = function () {
-        var features = _services__WEBPACK_IMPORTED_MODULE_2__.Services.getConfigService().features();
-        var featureValue = features[this.props.feature];
-        if (this.props.is !== undefined) {
-            return featureValue === this.props.is;
-        }
-        else if (this.props.isNot !== undefined) {
-            return featureValue !== this.props.isNot;
-        }
-        else {
-            return featureValue !== undefined;
-        }
-    };
-    return IfFeature;
-}(_baseComponent__WEBPACK_IMPORTED_MODULE_1__/* .PureComponent */ .V));
-
-
-
-/***/ }),
-
 /***/ 72672:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -294,8 +123,8 @@ var index_js_eager_ = __webpack_require__(48121);
 var index_js_eager_default = /*#__PURE__*/__webpack_require__.n(index_js_eager_);
 // EXTERNAL MODULE: ./src/app/components/baseComponent.ts
 var baseComponent = __webpack_require__(52445);
-// EXTERNAL MODULE: ./src/models/index.ts + 2 modules
-var models = __webpack_require__(89929);
+// EXTERNAL MODULE: ./src/models/index.ts + 3 modules
+var models = __webpack_require__(19162);
 ;// CONCATENATED MODULE: ./src/app/components/common/artifactTypeIcon.tsx
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -463,7 +292,7 @@ var ifFeature = __webpack_require__(13294);
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(90847);
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _baseComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52445);
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(94830);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(46768);
 /**
  * @license
  * Copyright 2020 JBoss Inc
@@ -544,11 +373,13 @@ __webpack_require__.d(__webpack_exports__, {
   "mf": () => (/* reexport */ ErrorPage),
   "No": () => (/* reexport */ common/* IfAuth */.No),
   "QT": () => (/* reexport */ common/* IfFeature */.QT),
+  "jb": () => (/* reexport */ modals/* PleaseWaitModal */.j),
   "Vx": () => (/* reexport */ baseComponent/* PureComponent */.V),
+  "N4": () => (/* reexport */ header/* RootPageHeader */.N),
   "RB": () => (/* reexport */ ruleList/* RuleList */.RB)
 });
 
-// UNUSED EXPORTS: AppHeader, CompatibilityDropdown, InvalidContentModal, PleaseWaitModal, ValidityDropdown
+// UNUSED EXPORTS: AppHeader, CompatibilityDropdown, InvalidContentModal, ValidityDropdown
 
 // EXTERNAL MODULE: ./src/app/components/common/index.ts + 1 modules
 var common = __webpack_require__(72672);
@@ -693,8 +524,8 @@ var ErrorPage = /** @class */ (function (_super) {
  */
 
 
-// EXTERNAL MODULE: ./src/app/components/header/index.ts + 1 modules
-var header = __webpack_require__(35661);
+// EXTERNAL MODULE: ./src/app/components/header/index.ts + 2 modules
+var header = __webpack_require__(99415);
 // EXTERNAL MODULE: ./src/app/components/ruleList/index.ts + 3 modules
 var ruleList = __webpack_require__(66333);
 // EXTERNAL MODULE: ./src/app/components/modals/index.ts + 1 modules
@@ -733,10 +564,9 @@ var modals = __webpack_require__(49746);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "R": () => (/* reexport */ InvalidContentModal)
+  "R": () => (/* reexport */ InvalidContentModal),
+  "j": () => (/* reexport */ pleaseWaitModal/* PleaseWaitModal */.j)
 });
-
-// UNUSED EXPORTS: PleaseWaitModal
 
 // EXTERNAL MODULE: consume shared module (default) react@=17.0.1 (singleton) (fallback: ./node_modules/react/index.js) (eager)
 var index_js_eager_ = __webpack_require__(48121);
@@ -1260,7 +1090,9 @@ var RuleList = /** @class */ (function (_super) {
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48121);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21467);
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(94830);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(46768);
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(90847);
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * @license
  * Copyright 2020 JBoss Inc
@@ -1301,6 +1133,14 @@ var __assign = (undefined && undefined.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __spreadArrays = (undefined && undefined.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+
 
 
 
@@ -1333,6 +1173,15 @@ var PageComponent = /** @class */ (function (_super) {
         if (this.isError()) {
             return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_1__/* .ErrorPage */ .mf, { error: this.state.error }));
         }
+        else if (this.isLoading()) {
+            return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__.PageSection, { variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__.PageSectionVariants.default, isFilled: true },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__.Flex, null,
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__.FlexItem, null,
+                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__.Spinner, { size: "lg" })),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__.FlexItem, null,
+                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Loading, please wait..."))))));
+        }
         else {
             return this.renderPage();
         }
@@ -1360,34 +1209,38 @@ var PageComponent = /** @class */ (function (_super) {
         var _this = this;
         // @ts-ignore
         var loaders = this.createLoaders();
+        // If not loading anything, convert from null to empty array
         if (loaders == null) {
+            loaders = [];
+        }
+        // Convert to array if not already
+        if (!Array.isArray(loaders)) {
+            loaders = [loaders];
+        }
+        // Always add the "update current user" loader
+        loaders = __spreadArrays([
+            _services__WEBPACK_IMPORTED_MODULE_2__.Services.getUsersService().updateCurrentUser()
+        ], loaders);
+        if (loaders.length === 0) {
             this.setSingleState("isLoading", false);
         }
         else {
-            if (!Array.isArray(loaders)) {
-                loaders = [loaders];
-            }
-            if (loaders.length === 0) {
-                this.setSingleState("isLoading", false);
-            }
-            else {
-                this.setSingleState("isLoading", true);
-                Promise.all(loaders).then(function () {
-                    _this.setSingleState("isLoading", false);
-                }).catch(function (error) {
-                    _services__WEBPACK_IMPORTED_MODULE_2__.Services.getLoggerService().debug("[PageComponent] Page data load failed, retrying.");
-                    var retries = _this.getRetries();
-                    if (retries < MAX_RETRIES) {
-                        _this.incrementRetries();
-                        setTimeout(function () {
-                            _this.loadPageData();
-                        }, Math.pow(2, retries) * 100);
-                    }
-                    else {
-                        _this.handleServerError(error, "Error loading page data.");
-                    }
-                });
-            }
+            this.setSingleState("isLoading", true);
+            Promise.all(loaders).then(function () {
+                _this.setSingleState("isLoading", false);
+            }).catch(function (error) {
+                _services__WEBPACK_IMPORTED_MODULE_2__.Services.getLoggerService().debug("[PageComponent] Page data load failed, retrying.");
+                var retries = _this.getRetries();
+                if (retries < MAX_RETRIES) {
+                    _this.incrementRetries();
+                    setTimeout(function () {
+                        _this.loadPageData();
+                    }, Math.pow(2, retries) * 100);
+                }
+                else {
+                    _this.handleServerError(error, "Error loading page data.");
+                }
+            });
         }
     };
     PageComponent.prototype.getRetries = function () {
@@ -1419,7 +1272,7 @@ var PageComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 89929:
+/***/ 19162:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1428,7 +1281,8 @@ var PageComponent = /** @class */ (function (_super) {
 __webpack_require__.d(__webpack_exports__, {
   "ArtifactMetaData": () => (/* reexport */ artifactMetaData_model/* ArtifactMetaData */._),
   "ArtifactTypes": () => (/* reexport */ artifactTypes_model/* ArtifactTypes */.R),
-  "ContentTypes": () => (/* reexport */ ContentTypes)
+  "ContentTypes": () => (/* reexport */ ContentTypes),
+  "RoleTypes": () => (/* reexport */ RoleTypes)
 });
 
 // UNUSED EXPORTS: VersionMetaData
@@ -1464,6 +1318,33 @@ var ContentTypes = /** @class */ (function () {
     ContentTypes.APPLICATION_PROTOBUF = "application/x-protobuf";
     ContentTypes.APPLICATION_GRAPHQL = "application/graphql";
     return ContentTypes;
+}());
+
+
+;// CONCATENATED MODULE: ./src/models/roleMapping.model.ts
+/**
+ * @license
+ * Copyright 2020 JBoss Inc
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var RoleTypes = /** @class */ (function () {
+    function RoleTypes() {
+    }
+    RoleTypes.READ_ONLY = "READ_ONLY";
+    RoleTypes.DEVELOPER = "DEVELOPER";
+    RoleTypes.ADMIN = "ADMIN";
+    return RoleTypes;
 }());
 
 
@@ -1517,6 +1398,8 @@ var VersionMetaData = /** @class */ (function () {
 
 
 
+
+
 /***/ }),
 
 /***/ 33614:
@@ -1542,7 +1425,7 @@ var VersionMetaData = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 94830:
+/***/ 46768:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1552,13 +1435,13 @@ __webpack_require__.d(__webpack_exports__, {
   "Services": () => (/* reexport */ Services)
 });
 
-// UNUSED EXPORTS: AdminService, BaseService, DownloaderService, GroupsService, LoggerService
+// UNUSED EXPORTS: AdminService, BaseService, DownloaderService, GroupsService, LoggerService, UsersService
 
 // EXTERNAL MODULE: consume shared module (default) axios@=0.21.1 (strict) (fallback: ./node_modules/axios/index.js)
 var index_js_ = __webpack_require__(2027);
 var index_js_default = /*#__PURE__*/__webpack_require__.n(index_js_);
-// EXTERNAL MODULE: ./src/models/index.ts + 2 modules
-var models = __webpack_require__(89929);
+// EXTERNAL MODULE: ./src/models/index.ts + 3 modules
+var models = __webpack_require__(19162);
 ;// CONCATENATED MODULE: ./src/services/baseService.ts
 /**
  * @license
@@ -1910,6 +1793,42 @@ var AdminService = /** @class */ (function (_super) {
         });
         return this.httpDelete(endpoint);
     };
+    AdminService.prototype.getRoleMappings = function () {
+        this.logger.info("[AdminService] Getting the list of role mappings.");
+        var endpoint = this.endpoint("/v2/admin/roleMappings");
+        return this.httpGet(endpoint);
+    };
+    AdminService.prototype.getRoleMapping = function (principalId) {
+        var endpoint = this.endpoint("/v2/admin/roleMappings/:principalId", {
+            principalId: principalId
+        });
+        return this.httpGet(endpoint);
+    };
+    AdminService.prototype.createRoleMapping = function (principalId, role) {
+        this.logger.info("[AdminService] Creating a role mapping:", principalId, role);
+        var endpoint = this.endpoint("/v2/admin/roleMappings");
+        var body = { principalId: principalId, role: role };
+        return this.httpPost(endpoint, body).then(function () {
+            return body;
+        });
+    };
+    AdminService.prototype.updateRoleMapping = function (principalId, role) {
+        this.logger.info("[AdminService] Updating role mapping:", principalId, role);
+        var endpoint = this.endpoint("/v2/admin/roleMappings/:principalId", {
+            principalId: principalId
+        });
+        var body = { role: role };
+        return this.httpPut(endpoint, body).then(function () {
+            return { principalId: principalId, role: role };
+        });
+    };
+    AdminService.prototype.deleteRoleMapping = function (principalId) {
+        this.logger.info("[AdminService] Deleting role mapping for:", principalId);
+        var endpoint = this.endpoint("/v2/admin/roleMappings/:principalId", {
+            principalId: principalId
+        });
+        return this.httpDelete(endpoint);
+    };
     return AdminService;
 }(BaseService));
 
@@ -1973,11 +1892,14 @@ var DEFAULT_CONFIG = {
             realm: 'registry',
             url: 'http://localhost:8090/auth'
         },
-        type: "keycloakjs"
+        type: "keycloakjs",
+        rbacEnabled: true,
+        obacEnabled: false
     },
     features: {
         readOnly: false,
-        breadcrumbs: true
+        breadcrumbs: true,
+        roleManagement: true
     },
     ui: {
         contextPath: "/",
@@ -2043,11 +1965,26 @@ var ConfigService = /** @class */ (function () {
     ConfigService.prototype.featureBreadcrumbs = function () {
         return this.features().breadcrumbs || false;
     };
+    ConfigService.prototype.featureRoleManagement = function () {
+        return this.features().roleManagement || false;
+    };
     ConfigService.prototype.authType = function () {
         if (!this.config.auth || !this.config.auth.type) {
             return "";
         }
         return this.config.auth.type;
+    };
+    ConfigService.prototype.authRbacEnabled = function () {
+        if (!this.config.auth || !this.config.auth.rbacEnabled) {
+            return false;
+        }
+        return this.config.auth.rbacEnabled;
+    };
+    ConfigService.prototype.authObacEnabled = function () {
+        if (!this.config.auth || !this.config.auth.obacEnabled) {
+            return false;
+        }
+        return this.config.auth.obacEnabled;
     };
     ConfigService.prototype.authOptions = function () {
         if (this.config.auth) {
@@ -2566,6 +2503,8 @@ function only(items, allOptions) {
 var AuthService = /** @class */ (function () {
     function AuthService() {
         var _this = this;
+        // @ts-ignore
+        this.users = null;
         this.enabled = false;
         // @ts-ignore
         this.config = null;
@@ -2579,9 +2518,6 @@ var AuthService = /** @class */ (function () {
             var initOptions = only(KC_INIT_OPTIONS, _this.config.authOptions());
             _this.keycloak = keycloak_js_default()(configOptions);
             var addRoles = function (user) {
-                if (_this.keycloak.realmAccess && _this.keycloak.realmAccess.roles) {
-                    user.roles = user.roles.concat(_this.keycloak.realmAccess.roles);
-                }
                 if (_this.keycloak.resourceAccess) {
                     Object.keys(_this.keycloak.resourceAccess)
                         // @ts-ignore
@@ -2627,7 +2563,7 @@ var AuthService = /** @class */ (function () {
                 }
             });
         };
-        this.isAuthenticated = function () { return _this.keycloak.authenticated; };
+        this.isAuthenticated = function () { return _this.keycloak != null && _this.keycloak.authenticated; };
         this.doLogin = function () { return _this.keycloak.login; };
         this.doLogout = function () { return _this.keycloak.logout; };
         this.getToken = function () { return _this.keycloak.token; };
@@ -2638,32 +2574,41 @@ var AuthService = /** @class */ (function () {
                 .catch(_this.doLogin);
         };
     }
-    AuthService.prototype.isAuthEnabled = function () {
+    AuthService.prototype.isAuthenticationEnabled = function () {
         return this.enabled;
     };
-    AuthService.prototype.isUserAdmin = function () {
-        if (!this.isAuthEnabled()) {
-            return true;
-        }
-        var rval = false;
-        this.user.roles.forEach(function (role) {
-            if (role === "sr-admin") {
-                rval = true;
-            }
-        });
-        return rval;
+    AuthService.prototype.isRbacEnabled = function () {
+        return this.config.authRbacEnabled();
     };
-    AuthService.prototype.isUserDeveloper = function () {
-        if (!this.isAuthEnabled()) {
+    AuthService.prototype.isObacEnabled = function () {
+        return this.config.authObacEnabled();
+    };
+    AuthService.prototype.isUserAdmin = function () {
+        if (!this.isAuthenticationEnabled()) {
             return true;
         }
-        var rval = false;
-        this.user.roles.forEach(function (role) {
-            if (role === "sr-admin" || role === "sr-developer") {
-                rval = true;
-            }
-        });
-        return rval;
+        if (!this.isRbacEnabled() && !this.isObacEnabled()) {
+            return true;
+        }
+        return this.users.currentUser().admin;
+    };
+    AuthService.prototype.isUserDeveloper = function (resourceOwner) {
+        if (!this.isAuthenticationEnabled()) {
+            return true;
+        }
+        if (!this.isRbacEnabled() && !this.isObacEnabled()) {
+            return true;
+        }
+        if (this.isUserAdmin()) {
+            return true;
+        }
+        if (this.isRbacEnabled() && !this.users.currentUser().developer) {
+            return false;
+        }
+        if (this.isObacEnabled() && resourceOwner && this.users.currentUser().username !== resourceOwner) {
+            return false;
+        }
+        return true;
     };
     AuthService.prototype.authenticateAndRender = function (render) {
         if (this.config.authType() === "keycloakjs") {
@@ -2722,6 +2667,96 @@ var AuthService = /** @class */ (function () {
  */
 
 
+;// CONCATENATED MODULE: ./src/services/users/users.service.ts
+/**
+ * @license
+ * Copyright 2021 Red Hat
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var users_service_extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+/**
+ * A service that provides access to the /users endpoint.
+ */
+var UsersService = /** @class */ (function (_super) {
+    users_service_extends(UsersService, _super);
+    function UsersService() {
+        var _this = _super.call(this) || this;
+        _this.currentUserInfo = {
+            username: "",
+            displayName: "",
+            admin: false,
+            developer: false,
+            viewer: false
+        };
+        return _this;
+    }
+    UsersService.prototype.init = function () {
+        // Nothing to init (done in c'tor)
+    };
+    UsersService.prototype.currentUser = function () {
+        return this.currentUserInfo;
+    };
+    UsersService.prototype.updateCurrentUser = function () {
+        var _this = this;
+        if (this.auth.isAuthenticated()) {
+            // TODO cache the response for a few minutes to limit the # of times this is called per minute??
+            var endpoint = this.endpoint("/v2/users/me");
+            return this.httpGet(endpoint).then(function (userInfo) {
+                _this.currentUserInfo = userInfo;
+                return userInfo;
+            });
+        }
+        else {
+            return Promise.resolve(this.currentUserInfo);
+        }
+    };
+    return UsersService;
+}(BaseService));
+
+
+;// CONCATENATED MODULE: ./src/services/users/index.ts
+/**
+ * @license
+ * Copyright 2020 JBoss Inc
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
 ;// CONCATENATED MODULE: ./src/services/services.ts
 /* provided dependency */ var services_console = __webpack_require__(25108);
 /**
@@ -2740,6 +2775,7 @@ var AuthService = /** @class */ (function () {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 
 
@@ -2770,6 +2806,9 @@ var Services = /** @class */ (function () {
     Services.getAuthService = function () {
         return Services.all.auth;
     };
+    Services.getUsersService = function () {
+        return Services.all.users;
+    };
     // tslint:disable-next-line:member-ordering member-access
     Services._intialize = function () {
         services_console.info("[Services] _initialize() in Services");
@@ -2798,6 +2837,7 @@ var Services = /** @class */ (function () {
     Services._isInit = false;
     Services.all = {
         groups: new GroupsService(),
+        users: new UsersService(),
         config: new ConfigService(),
         downloader: new DownloaderService(),
         admin: new AdminService(),
@@ -2835,6 +2875,7 @@ Services._intialize();
 
 
 
+
 /***/ }),
 
 /***/ 95762:
@@ -2852,4 +2893,4 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW
 /***/ })
 
 }]);
-//# sourceMappingURL=509.bundle.589aedd382b3f1524b14.js.map
+//# sourceMappingURL=705.bundle.6227e202e9bc0b1116f5.js.map

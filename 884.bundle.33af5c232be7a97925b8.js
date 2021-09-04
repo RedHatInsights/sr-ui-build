@@ -1,4 +1,4 @@
-(self["webpackChunk_apicurio_registry_ui"] = self["webpackChunk_apicurio_registry_ui"] || []).push([[243],{
+(self["webpackChunk_apicurio_registry_ui"] = self["webpackChunk_apicurio_registry_ui"] || []).push([[884],{
 
 /***/ 79253:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
@@ -214,10 +214,186 @@ var If = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 35661:
-/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
+/***/ 67030:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "N": () => (/* binding */ IfAuth)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48121);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _baseComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52445);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(46768);
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+/**
+ * @license
+ * Copyright 2020 JBoss Inc
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+/**
+ * Wrapper around a set of arbitrary child elements and displays them only if the
+ * indicated authentication parameters are true.
+ */
+var IfAuth = /** @class */ (function (_super) {
+    __extends(IfAuth, _super);
+    function IfAuth(props) {
+        return _super.call(this, props) || this;
+    }
+    IfAuth.prototype.render = function () {
+        if (this.accept()) {
+            return react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), { children: this.props.children });
+        }
+        else {
+            return react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
+        }
+    };
+    IfAuth.prototype.initializeState = function () {
+        return {};
+    };
+    IfAuth.prototype.accept = function () {
+        var auth = _services__WEBPACK_IMPORTED_MODULE_2__.Services.getAuthService();
+        var rval = true;
+        if (this.props.enabled !== undefined) {
+            rval = rval && (auth.isAuthenticationEnabled() === this.props.enabled);
+        }
+        if (this.props.isAuthenticated !== undefined) {
+            rval = rval && (auth.isAuthenticated() === this.props.isAuthenticated);
+        }
+        if (this.props.isAdmin !== undefined) {
+            rval = rval && (auth.isUserAdmin() === this.props.isAdmin);
+        }
+        if (this.props.isDeveloper !== undefined) {
+            rval = rval && (auth.isUserDeveloper(this.props.owner) === this.props.isDeveloper);
+        }
+        return rval;
+    };
+    return IfAuth;
+}(_baseComponent__WEBPACK_IMPORTED_MODULE_1__/* .PureComponent */ .V));
+
+
+
+/***/ }),
+
+/***/ 13294:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Q": () => (/* binding */ IfFeature)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48121);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _baseComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52445);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(46768);
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+/**
+ * @license
+ * Copyright 2020 JBoss Inc
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+/**
+ * Wrapper around a set of arbitrary child elements and displays them only if the
+ * indicated feature matches the given criteria.  Use this if you want to show/hide
+ * UI elements based on the configured application feature set.
+ */
+var IfFeature = /** @class */ (function (_super) {
+    __extends(IfFeature, _super);
+    function IfFeature(props) {
+        return _super.call(this, props) || this;
+    }
+    IfFeature.prototype.render = function () {
+        if (this.accept()) {
+            return react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), { children: this.props.children });
+        }
+        else {
+            return react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
+        }
+    };
+    IfFeature.prototype.initializeState = function () {
+        return {};
+    };
+    IfFeature.prototype.accept = function () {
+        var features = _services__WEBPACK_IMPORTED_MODULE_2__.Services.getConfigService().features();
+        var featureValue = features[this.props.feature];
+        if (this.props.is !== undefined) {
+            return featureValue === this.props.is;
+        }
+        else if (this.props.isNot !== undefined) {
+            return featureValue !== this.props.isNot;
+        }
+        else {
+            return featureValue !== undefined;
+        }
+    };
+    return IfFeature;
+}(_baseComponent__WEBPACK_IMPORTED_MODULE_1__/* .PureComponent */ .V));
+
+
+
+/***/ }),
+
+/***/ 99415:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "N": () => (/* reexport */ RootPageHeader)
+});
 
 // UNUSED EXPORTS: AppHeader
 
@@ -293,6 +469,90 @@ var AppHeader = /** @class */ (function (_super) {
 }(baseComponent/* PureComponent */.V));
 
 
+// EXTERNAL MODULE: ./src/app/components/common/index.ts + 1 modules
+var common = __webpack_require__(72672);
+// EXTERNAL MODULE: ./src/services/index.ts + 16 modules
+var services = __webpack_require__(46768);
+;// CONCATENATED MODULE: ./src/app/components/header/pageheader.tsx
+var pageheader_extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+/**
+ * @license
+ * Copyright 2021 JBoss Inc
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+
+
+
+/**
+ * Models the page header for the Artifacts page.
+ */
+var RootPageHeader = /** @class */ (function (_super) {
+    pageheader_extends(RootPageHeader, _super);
+    function RootPageHeader(props) {
+        var _this = _super.call(this, props) || this;
+        _this.handleTabClick = function (event, eventKey) {
+            if (eventKey != _this.props.tabKey) {
+                if (eventKey == 0) {
+                    // navigate to artifacts
+                    _this.navigateTo(_this.linkTo("/artifacts"))();
+                }
+                if (eventKey == 1) {
+                    // navigate to global rules
+                    _this.navigateTo(_this.linkTo("/rules"))();
+                }
+                if (eventKey == 2) {
+                    // navigate to permissions page
+                    _this.navigateTo(_this.linkTo("/roles"))();
+                }
+            }
+        };
+        return _this;
+    }
+    RootPageHeader.prototype.render = function () {
+        var tabs = [
+            index_js_eager_default().createElement(index_js_.Tab, { eventKey: 0, title: index_js_eager_default().createElement(index_js_.TabTitleText, null, "Artifacts") }),
+            index_js_eager_default().createElement(index_js_.Tab, { eventKey: 1, title: index_js_eager_default().createElement(index_js_.TabTitleText, null, "Global Rules") })
+        ];
+        if (services.Services.getConfigService().featureRoleManagement()) {
+            tabs.push(index_js_eager_default().createElement(index_js_.Tab, { eventKey: 2, title: index_js_eager_default().createElement(index_js_.TabTitleText, null, "Permissions") }));
+        }
+        return (index_js_eager_default().createElement("div", null,
+            index_js_eager_default().createElement(common/* IfAuth */.No, { isAdmin: true },
+                index_js_eager_default().createElement(index_js_.Tabs, { activeKey: this.props.tabKey, onSelect: this.handleTabClick, children: tabs }))));
+    };
+    RootPageHeader.prototype.initializeState = function () {
+        return {};
+    };
+    return RootPageHeader;
+}(baseComponent/* PureComponent */.V));
+
+
 ;// CONCATENATED MODULE: ./src/app/components/header/index.ts
 /**
  * @license
@@ -313,6 +573,7 @@ var AppHeader = /** @class */ (function (_super) {
 
 
 
+
 /***/ }),
 
 /***/ 69910:
@@ -325,8 +586,8 @@ __webpack_require__.d(__webpack_exports__, {
   "m": () => (/* reexport */ FederatedUtils)
 });
 
-// EXTERNAL MODULE: ./src/services/index.ts + 14 modules
-var services = __webpack_require__(94830);
+// EXTERNAL MODULE: ./src/services/index.ts + 16 modules
+var services = __webpack_require__(46768);
 // EXTERNAL MODULE: ./src/app/components/index.ts + 2 modules
 var components = __webpack_require__(21467);
 ;// CONCATENATED MODULE: ./src/app/federated/federated-utils.ts
@@ -382,7 +643,42 @@ var FederatedUtils = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 70581:
+/***/ 11940:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "gx": () => (/* reexport safe */ _empty__WEBPACK_IMPORTED_MODULE_0__.g),
+/* harmony export */   "st": () => (/* reexport safe */ _roleList__WEBPACK_IMPORTED_MODULE_1__.s),
+/* harmony export */   "C0": () => (/* reexport safe */ _modals__WEBPACK_IMPORTED_MODULE_2__.C)
+/* harmony export */ });
+/* harmony import */ var _empty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19595);
+/* harmony import */ var _roleList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41016);
+/* harmony import */ var _modals__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5099);
+/**
+ * @license
+ * Copyright 2020 JBoss Inc
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+
+
+/***/ }),
+
+/***/ 30069:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -390,11 +686,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _artifacts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(83993);
+/* harmony import */ var _roles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(54896);
 /* harmony import */ var _federated__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(69910);
 /**
  * @license
- * Copyright 2021 Red Hat
+ * Copyright 2020 JBoss Inc
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -423,167 +719,22 @@ var __extends = (undefined && undefined.__extends) || (function () {
 })();
 
 
-var FederatedArtifactsPage = /** @class */ (function (_super) {
-    __extends(FederatedArtifactsPage, _super);
-    function FederatedArtifactsPage(props) {
+
+/**
+ * The global roles page.
+ */
+var FederatedRolesPage = /** @class */ (function (_super) {
+    __extends(FederatedRolesPage, _super);
+    function FederatedRolesPage(props) {
         return _super.call(this, props) || this;
     }
-    FederatedArtifactsPage.prototype.postConstruct = function () {
+    FederatedRolesPage.prototype.postConstruct = function () {
         _federated__WEBPACK_IMPORTED_MODULE_1__/* .FederatedUtils.updateConfiguration */ .m.updateConfiguration(this.props);
         _super.prototype.postConstruct.call(this);
     };
-    return FederatedArtifactsPage;
-}(_artifacts__WEBPACK_IMPORTED_MODULE_0__/* .ArtifactsPage */ .y));
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FederatedArtifactsPage);
-
-
-/***/ }),
-
-/***/ 84270:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ye": () => (/* reexport safe */ _artifactList__WEBPACK_IMPORTED_MODULE_0__.y)
-/* harmony export */ });
-/* harmony import */ var _artifactList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14198);
-/* harmony import */ var _artifactGroup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37759);
-/* harmony import */ var _artifactName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(99350);
-/**
- * @license
- * Copyright 2020 JBoss Inc
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-
-
-
-
-/***/ }),
-
-/***/ 73243:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "B": () => (/* reexport safe */ _empty__WEBPACK_IMPORTED_MODULE_0__.B)
-/* harmony export */ });
-/* harmony import */ var _empty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2377);
-/**
- * @license
- * Copyright 2020 JBoss Inc
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-
-
-/***/ }),
-
-/***/ 31950:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "W": () => (/* reexport safe */ _pageheader__WEBPACK_IMPORTED_MODULE_0__.W)
-/* harmony export */ });
-/* harmony import */ var _pageheader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90244);
-/**
- * @license
- * Copyright 2020 JBoss Inc
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-
-
-/***/ }),
-
-/***/ 80941:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "U": () => (/* reexport safe */ _toolbar__WEBPACK_IMPORTED_MODULE_0__.U)
-/* harmony export */ });
-/* harmony import */ var _toolbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(60210);
-/**
- * @license
- * Copyright 2020 JBoss Inc
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-
-
-/***/ }),
-
-/***/ 70150:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "k": () => (/* reexport safe */ _uploadForm__WEBPACK_IMPORTED_MODULE_0__.k)
-/* harmony export */ });
-/* harmony import */ var _uploadForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(85428);
-/**
- * @license
- * Copyright 2020 JBoss Inc
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
+    return FederatedRolesPage;
+}(_roles__WEBPACK_IMPORTED_MODULE_0__/* .RolesPage */ .s));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FederatedRolesPage);
 
 
 /***/ }),
@@ -666,4 +817,4 @@ var ArtifactTypes = /** @class */ (function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=243.bundle.45e4ea8272ec3c6f0c34.js.map
+//# sourceMappingURL=884.bundle.33af5c232be7a97925b8.js.map

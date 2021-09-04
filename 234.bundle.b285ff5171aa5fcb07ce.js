@@ -1,4 +1,4 @@
-(self["webpackChunk_apicurio_registry_ui"] = self["webpackChunk_apicurio_registry_ui"] || []).push([[690],{
+(self["webpackChunk_apicurio_registry_ui"] = self["webpackChunk_apicurio_registry_ui"] || []).push([[234],{
 
 /***/ 83993:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -11,16 +11,16 @@
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(90847);
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_pageheader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(31950);
-/* harmony import */ var _components_artifactList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(84270);
-/* harmony import */ var _basePage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(26619);
-/* harmony import */ var _components_toolbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(80941);
-/* harmony import */ var _components_empty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(73243);
-/* harmony import */ var _components_uploadForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(70150);
-/* harmony import */ var _components_modals__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(49746);
-/* harmony import */ var _components_common_if__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(24754);
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(94830);
-/* harmony import */ var _components_modals_pleaseWaitModal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(38304);
+/* harmony import */ var _components_artifactList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(84270);
+/* harmony import */ var _basePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(26619);
+/* harmony import */ var _components_toolbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(80941);
+/* harmony import */ var _components_empty__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(73243);
+/* harmony import */ var _components_uploadForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(70150);
+/* harmony import */ var _components_modals__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(49746);
+/* harmony import */ var _components_common_if__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(24754);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(46768);
+/* harmony import */ var _components_modals_pleaseWaitModal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(38304);
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(21467);
 /**
  * @license
  * Copyright 2020 JBoss Inc
@@ -84,10 +84,10 @@ var ArtifactsPage = /** @class */ (function (_super) {
                 if (!_this.state.uploadFormData.groupId) {
                     _this.state.uploadFormData.groupId = "default";
                 }
-                _services__WEBPACK_IMPORTED_MODULE_10__.Services.getGroupsService().createArtifact(_this.state.uploadFormData).then(function (metaData) {
+                _services__WEBPACK_IMPORTED_MODULE_9__.Services.getGroupsService().createArtifact(_this.state.uploadFormData).then(function (metaData) {
                     var groupId = metaData.groupId ? metaData.groupId : "default";
                     var artifactLocation = _this.linkTo("/artifacts/" + encodeURIComponent(groupId) + "/" + encodeURIComponent(metaData.id));
-                    _services__WEBPACK_IMPORTED_MODULE_10__.Services.getLoggerService().info("[ArtifactsPage] Artifact successfully uploaded.  Redirecting to details: ", artifactLocation);
+                    _services__WEBPACK_IMPORTED_MODULE_9__.Services.getLoggerService().info("[ArtifactsPage] Artifact successfully uploaded.  Redirecting to details: ", artifactLocation);
                     _this.navigateTo(artifactLocation)();
                 }).catch(function (error) {
                     _this.pleaseWait(false);
@@ -155,29 +155,23 @@ var ArtifactsPage = /** @class */ (function (_super) {
     }
     ArtifactsPage.prototype.renderPage = function () {
         return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSection, { className: "ps_artifacts-header", variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSectionVariants.light },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_pageheader__WEBPACK_IMPORTED_MODULE_2__/* .ArtifactsPageHeader */ .W, { onUploadArtifact: this.onUploadArtifact })),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_common_if__WEBPACK_IMPORTED_MODULE_9__.If, { condition: this.showToolbar },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSection, { className: "ps_artifacts-header", variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSectionVariants.light, padding: { default: "noPadding" } },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_11__/* .RootPageHeader */ .N4, { tabKey: 0 })),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_common_if__WEBPACK_IMPORTED_MODULE_8__.If, { condition: this.showToolbar },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSection, { variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSectionVariants.light, padding: { default: "noPadding" } },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_toolbar__WEBPACK_IMPORTED_MODULE_5__/* .ArtifactsPageToolbar */ .U, { artifacts: this.results(), paging: this.state.paging, onPerPageSelect: this.onPerPageSelect, onSetPage: this.onSetPage, onChange: this.onFilterChange }))),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSection, { variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSectionVariants.default, isFilled: true }, this.isLoading() ?
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Flex, null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.FlexItem, null,
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Spinner, { size: "lg" })),
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.FlexItem, null,
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Loading, please wait...")))
-                : this.artifactsCount() === 0 ?
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_empty__WEBPACK_IMPORTED_MODULE_6__/* .ArtifactsPageEmptyState */ .B, { onUploadArtifact: this.onUploadArtifact, isFiltered: this.isFiltered() })
-                    :
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_artifactList__WEBPACK_IMPORTED_MODULE_3__/* .ArtifactList */ .ye, { artifacts: this.artifacts(), onGroupClick: this.onGroupClick }))),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_toolbar__WEBPACK_IMPORTED_MODULE_4__/* .ArtifactsPageToolbar */ .U, { artifacts: this.results(), paging: this.state.paging, onPerPageSelect: this.onPerPageSelect, onSetPage: this.onSetPage, onUploadArtifact: this.onUploadArtifact, onChange: this.onFilterChange }))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSection, { variant: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.PageSectionVariants.default, isFilled: true }, this.artifactsCount() === 0 ?
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_empty__WEBPACK_IMPORTED_MODULE_5__/* .ArtifactsPageEmptyState */ .B, { onUploadArtifact: this.onUploadArtifact, isFiltered: this.isFiltered() })
+                :
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_artifactList__WEBPACK_IMPORTED_MODULE_2__/* .ArtifactList */ .ye, { artifacts: this.artifacts(), onGroupClick: this.onGroupClick }))),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Modal, { title: "Upload Artifact", variant: "large", isOpen: this.state.isUploadModalOpen, onClose: this.onUploadModalClose, className: "upload-artifact-modal pf-m-redhat-font", actions: [
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Button, { key: "upload", variant: "primary", "data-testid": "modal-btn-upload", onClick: this.doUploadArtifact, isDisabled: !this.state.isUploadFormValid }, "Upload"),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Button, { key: "cancel", variant: "link", "data-testid": "modal-btn-cancel", onClick: this.onUploadModalClose }, "Cancel")
                 ] },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_uploadForm__WEBPACK_IMPORTED_MODULE_7__/* .UploadArtifactForm */ .k, { onChange: this.onUploadFormChange, onValid: this.onUploadFormValid })),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_modals__WEBPACK_IMPORTED_MODULE_8__/* .InvalidContentModal */ .R, { error: this.state.invalidContentError, isOpen: this.state.isInvalidContentModalOpen, onClose: this.closeInvalidContentModal }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_modals_pleaseWaitModal__WEBPACK_IMPORTED_MODULE_11__/* .PleaseWaitModal */ .j, { message: "Creating artifact, please wait...", isOpen: this.state.isPleaseWaitModalOpen })));
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_uploadForm__WEBPACK_IMPORTED_MODULE_6__/* .UploadArtifactForm */ .k, { onChange: this.onUploadFormChange, onValid: this.onUploadFormValid })),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_modals__WEBPACK_IMPORTED_MODULE_7__/* .InvalidContentModal */ .R, { error: this.state.invalidContentError, isOpen: this.state.isInvalidContentModalOpen, onClose: this.closeInvalidContentModal }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_modals_pleaseWaitModal__WEBPACK_IMPORTED_MODULE_10__/* .PleaseWaitModal */ .j, { message: "Creating artifact, please wait...", isOpen: this.state.isPleaseWaitModalOpen })));
     };
     ArtifactsPage.prototype.initializePageState = function () {
         return {
@@ -230,21 +224,21 @@ var ArtifactsPage = /** @class */ (function (_super) {
     // @ts-ignore
     ArtifactsPage.prototype.search = function () {
         var _this = this;
-        return _services__WEBPACK_IMPORTED_MODULE_10__.Services.getGroupsService().getArtifacts(this.state.criteria, this.state.paging).then(function (results) {
+        return _services__WEBPACK_IMPORTED_MODULE_9__.Services.getGroupsService().getArtifacts(this.state.criteria, this.state.paging).then(function (results) {
             _this.onArtifactsLoaded(results);
         }).catch(function (error) {
             _this.handleServerError(error, "Error searching for artifacts.");
         });
     };
     ArtifactsPage.prototype.handleInvalidContentError = function (error) {
-        _services__WEBPACK_IMPORTED_MODULE_10__.Services.getLoggerService().info("INVALID CONTENT ERROR", error);
+        _services__WEBPACK_IMPORTED_MODULE_9__.Services.getLoggerService().info("INVALID CONTENT ERROR", error);
         this.setMultiState({
             invalidContentError: error,
             isInvalidContentModalOpen: true
         });
     };
     return ArtifactsPage;
-}(_basePage__WEBPACK_IMPORTED_MODULE_4__/* .PageComponent */ .I));
+}(_basePage__WEBPACK_IMPORTED_MODULE_3__/* .PageComponent */ .I));
 
 
 
@@ -583,86 +577,6 @@ var ArtifactsPageEmptyState = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 90244:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "W": () => (/* binding */ ArtifactsPageHeader)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48121);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(90847);
-/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(21467);
-/* harmony import */ var _components_common_ifFeature__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13294);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(76007);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_4__);
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-/**
- * @license
- * Copyright 2020 JBoss Inc
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-
-
-
-
-
-/**
- * Models the page header for the Artifacts page.
- */
-var ArtifactsPageHeader = /** @class */ (function (_super) {
-    __extends(ArtifactsPageHeader, _super);
-    function ArtifactsPageHeader(props) {
-        return _super.call(this, props) || this;
-    }
-    ArtifactsPageHeader.prototype.render = function () {
-        return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Flex, { className: "example-border" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.FlexItem, null,
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.TextContent, null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Text, { component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.TextVariants.h1 }, "Artifacts"))),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.FlexItem, { align: { default: "alignRight" } },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_2__/* .IfAuth */ .No, { isAdmin: true },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, { className: "btn-header-global-rules pf-c-button pf-m-secondary", "data-testid": "btn-header-global-rules", to: this.linkTo("/rules") }, "Manage global rules")),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_2__/* .IfAuth */ .No, { isDeveloper: true },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_common_ifFeature__WEBPACK_IMPORTED_MODULE_3__/* .IfFeature */ .Q, { feature: "readOnly", isNot: true },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Button, { className: "btn-header-upload-artifact", "data-testid": "btn-header-upload-artifact", variant: "primary", onClick: this.props.onUploadArtifact }, "Upload artifact"))))));
-    };
-    ArtifactsPageHeader.prototype.initializeState = function () {
-        return {};
-    };
-    return ArtifactsPageHeader;
-}(_components__WEBPACK_IMPORTED_MODULE_2__/* .PureComponent */ .Vx));
-
-
-
-/***/ }),
-
 /***/ 60210:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -677,7 +591,7 @@ var ArtifactsPageHeader = /** @class */ (function (_super) {
 /* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(93179);
 /* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_patternfly_react_icons__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(21467);
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(94830);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(46768);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -771,6 +685,10 @@ var ArtifactsPageToolbar = /** @class */ (function (_super) {
                                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_icons__WEBPACK_IMPORTED_MODULE_2__.SearchIcon, null))))),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.ToolbarItem, { className: "sort-icon-item" },
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Button, { variant: "plain", "aria-label": "edit", "data-testid": "toolbar-btn-sort", onClick: this.onToggleAscending }, this.state.ascending ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_icons__WEBPACK_IMPORTED_MODULE_2__.SortAlphaDownIcon, null) : react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_icons__WEBPACK_IMPORTED_MODULE_2__.SortAlphaDownAltIcon, null))),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.ToolbarItem, { className: "upload-artifact-item" },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_3__/* .IfAuth */ .No, { isDeveloper: true },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_3__/* .IfFeature */ .QT, { feature: "readOnly", isNot: true },
+                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Button, { className: "btn-header-upload-artifact", "data-testid": "btn-header-upload-artifact", variant: "primary", onClick: this.props.onUploadArtifact }, "Upload artifact")))),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.ToolbarItem, { className: "artifact-paging-item" },
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_1__.Pagination, { variant: "bottom", dropDirection: "down", itemCount: this.totalArtifactsCount(), perPage: this.props.paging.pageSize, page: this.props.paging.page, onSetPage: this.props.onSetPage, onPerPageSelect: this.props.onPerPageSelect, widgetId: "artifact-list-pagination", className: "artifact-list-pagination" })))));
     };
@@ -830,7 +748,7 @@ var ArtifactsPageToolbar = /** @class */ (function (_super) {
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93179);
 /* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_patternfly_react_icons__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _models__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(89929);
+/* harmony import */ var _models__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(19162);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -1062,4 +980,4 @@ var UploadArtifactForm = /** @class */ (function (_super) {
 /***/ })
 
 }]);
-//# sourceMappingURL=690.bundle.7f855125ac850ce0b038.js.map
+//# sourceMappingURL=234.bundle.b285ff5171aa5fcb07ce.js.map
