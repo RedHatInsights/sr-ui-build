@@ -2845,7 +2845,11 @@ var AuthService = /** @class */ (function () {
         };
         this.isAuthenticated = function () { return _this.keycloak != null && _this.keycloak.authenticated; };
         this.doLogin = function () { return _this.keycloak.login; };
-        this.doLogout = function () { return _this.keycloak.logout; };
+        this.doLogout = function () {
+            _this.keycloak.logout({
+                redirectUri: window.location.href
+            });
+        };
         this.getToken = function () { return _this.keycloak.token; };
         // @ts-ignore
         this.updateKeycloakToken = function (successCallback) {
@@ -3173,4 +3177,4 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW
 /***/ })
 
 }]);
-//# sourceMappingURL=946.bundle.1fca98b94258bb5f7a55.js.map
+//# sourceMappingURL=946.bundle.551d925015627f8c2c7d.js.map
