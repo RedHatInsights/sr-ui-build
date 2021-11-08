@@ -1,7 +1,7 @@
 {
     "apicurio_registry": {
         "entry": [
-            "/apicurio_registry.e5e00cb3.js"
+            "/apicurio_registry.8509a851.js"
         ],
         "modules": [
             "/190.css",
@@ -10,7 +10,7 @@
             "/228.css",
             "/228.bundle.ace35bd6b8b63cb19ad0.js",
             "/167.css",
-            "/167.bundle.47150dcdb3be9e2f7a56.js",
+            "/167.bundle.915bc2a6af4c04ed77af.js",
             "/866.css",
             "/866.bundle.f283e9ece07bb231212e.js",
             "/755.bundle.a3bc00383d1883ad12c0.js"
