@@ -1,7 +1,7 @@
 {
     "apicurio_registry": {
         "entry": [
-            "/apicurio_registry.3e13b78f.js"
+            "/apicurio_registry.8fbbddc3.js"
         ],
         "modules": [
             "/162.css",
@@ -14,7 +14,7 @@
             "/600.css",
             "/600.bundle.38778c30c1b68a1c717f.js",
             "/411.css",
-            "/411.bundle.ed534a70631d356d87fe.js",
+            "/411.bundle.9ffde5271055fd85d3ce.js",
             "/755.bundle.2d3d17add4ed09a5d677.js",
             "/914.bundle.1c24ef1d3968da21811b.js"
         ]
