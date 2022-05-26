@@ -1,22 +1,22 @@
 {
     "apicurio_registry": {
         "entry": [
-            "/apicurio_registry.8c25ac22.js"
+            "/apicurio_registry.595eb2ab.js"
         ],
         "modules": [
-            "/162.css",
-            "/162.bundle.53829fb0fb5dd875d124.js",
-            "/327.bundle.c5b31c2aa6bd68baad98.js",
-            "/228.css",
-            "/228.bundle.79e5fa7c45ad6a19bb79.js",
-            "/167.css",
-            "/167.bundle.17a650577f13df04910f.js",
-            "/600.css",
-            "/600.bundle.4410dc3073a89baad082.js",
-            "/411.css",
-            "/411.bundle.57d03b3a254e502e99aa.js",
-            "/755.bundle.2d3d17add4ed09a5d677.js",
-            "/914.bundle.1c24ef1d3968da21811b.js"
+            "/849.css",
+            "/849.bundle.a056569d4156cacf3fe8.js",
+            "/80.bundle.15bd0db6bd95a34c0bd9.js",
+            "/283.css",
+            "/283.bundle.d257923eb3a6d5821970.js",
+            "/63.css",
+            "/63.bundle.1d94f46bbd9cbbdd0b19.js",
+            "/643.css",
+            "/643.bundle.042fce4519f6fee80813.js",
+            "/506.css",
+            "/506.bundle.6a6d996b79aa2d9cb6d2.js",
+            "/247.bundle.511d776390cdc013fb07.js",
+            "/361.bundle.1642a34e7dd9f2e1cae9.js"
         ]
     }
 }
