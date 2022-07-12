@@ -1,0 +1,1 @@
+{"version":3,"file":"fe2f0c39.css","mappings":"AAAA,iBACI,4BACJ","sources":["webpack://@apicurio/registry-ui/./src/app/pages/rules/rules.css"],"sourcesContent":[".ps_rules-header {\n    border-bottom: 1px solid #ddd;\n}\n"],"names":[],"sourceRoot":""}
