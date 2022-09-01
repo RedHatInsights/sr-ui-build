@@ -1,0 +1,1 @@
+(self.webpackChunk_apicurio_registry_ui=self.webpackChunk_apicurio_registry_ui||[]).push([[1386,6949],{33471:()=>{},52361:()=>{},94616:()=>{}}]);
