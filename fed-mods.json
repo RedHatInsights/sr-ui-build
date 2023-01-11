@@ -1,23 +1,22 @@
 {
     "apicurio_registry": {
         "entry": [
-            "/apicurio_registry.2b09d656.js"
+            "/apicurio_registry.bd1d4783.js"
         ],
         "modules": [
             "/50255893.css",
-            "/6349.a72e05fc.js",
-            "/241.f57d71e3.js",
+            "/5988.2b38c31e.js",
+            "/1731.0445a7b5.js",
             "/415c8409.css",
-            "/2292.05ad0386.js",
+            "/2292.4e624ad9.js",
             "/fe2f0c39.css",
-            "/903.5ccbe227.js",
+            "/1444.78fc1746.js",
             "/bc9da50d.css",
-            "/7569.71e1bf84.js",
+            "/7569.d709160e.js",
             "/bb63317b.css",
-            "/9683.2d6512fc.js",
-            "/2752.5214e85b.js",
-            "/6518.0d3b3a4e.js",
-            "/8115.b814051b.js"
+            "/3669.24af076f.js",
+            "/1366.a2e2fa9a.js",
+            "/8581.ef06316a.js"
         ]
     }
 }
